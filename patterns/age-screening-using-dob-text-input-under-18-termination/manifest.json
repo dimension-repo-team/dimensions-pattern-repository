@@ -1,0 +1,6 @@
+{
+  "id": "age-screening-using-dob-text-input-under-18-termination",
+  "title": "Age Screening Using DOB (Text Input). Under 18 Termination",
+  "description": "Calculates respondent age from a DOB stored as text (DD/MM/YYYY) and terminates the interview if age is below 18.",
+  "hasPreview": false
+}
