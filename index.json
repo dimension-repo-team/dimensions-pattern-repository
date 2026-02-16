@@ -75,5 +75,20 @@
     "projectId": "UK2507932701",
     "addedBy": "Vaibhav Bharambe",
     "path": "patterns/rank-up-to-5-with-other-specify-and-exclusive-options"
+  },
+  {
+    "id": "age-screening-using-dob-text-input-under-18-termination",
+    "title": "Age Screening Using DOB (Text Input). Under 18 Termination",
+    "description": "Calculates respondent age from a DOB stored as text (DD/MM/YYYY) and terminates the interview if age is below 18.",
+    "tags": [
+      "age_screening",
+      "dob_validation",
+      "text_date_handling"
+    ],
+    "questionType": "Text type",
+    "projectName": "25-074225-01-02 Lilly Alzheimer Patients",
+    "projectId": "UK250742250102",
+    "addedBy": "Parveen Jindal",
+    "path": "patterns/age-screening-using-dob-text-input-under-18-termination"
   }
 ]
