@@ -1,0 +1,19 @@
+
+QSAge.Ask()
+Dim dob, age, today
+today = Now()
+
+dob = CDate(QSAge.Response.Value)
+
+age = Year(today) - Year(dob)
+
+If Month(today) < Month(dob) Or (Month(today) = Month(dob) And Day(today) < Day(dob)) Then
+    age = age - 1
+End If
+
+If age < 18 Then
+	MRK_QSCREEN = MRK_QSCREEN + {QSAge}
+    ShowTest(IOM, MRK_QSCREEN, "")
+    If ContainsAny(QSCREEN, {SQUIT}) Then QSCREEN.Response = {QSAge}
+    GoTo TERMINATE
+End If
