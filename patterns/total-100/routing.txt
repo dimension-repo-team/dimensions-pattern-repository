@@ -1,0 +1,5 @@
+jsShowRunTotalColumnsWiseP(IOM, GRID_Q5A_AST, {Total}, 1, GRID_Q5A_AST.Categories.Count, "false", "", "", 1, {_})
+DumTotal = 100
+GRID_Q5A_AST.validation.Funtion = "runtotal"
+ShowQuestionNo(IOM,"GRID_Q5A_AST")
+GRID_Q5A_AST.Ask()
