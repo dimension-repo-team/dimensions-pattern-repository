@@ -90,18 +90,5 @@
     "projectId": "UK250742250102",
     "addedBy": "Parveen Jindal",
     "path": "patterns/age-screening-using-dob-text-input-under-18-termination"
-  },
-  {
-    "id": "total-100",
-    "title": "Total 100",
-    "description": "xyz",
-    "tags": [
-      "100"
-    ],
-    "questionType": "numeric",
-    "projectName": "abc",
-    "projectId": "1234",
-    "addedBy": "Parveen",
-    "path": "patterns/total-100"
   }
 ]
