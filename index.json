@@ -103,5 +103,18 @@
     "projectId": "1234",
     "addedBy": "Parveen Jindal",
     "path": "patterns/total-100"
+  },
+  {
+    "id": "zzz",
+    "title": "zzz",
+    "description": "zzz",
+    "tags": [
+      "zzz"
+    ],
+    "questionType": "zzz",
+    "projectName": "zzz",
+    "projectId": "zzz",
+    "addedBy": "zzz",
+    "path": "patterns/zzz"
   }
 ]
