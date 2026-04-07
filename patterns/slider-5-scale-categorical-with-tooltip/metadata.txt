@@ -1,0 +1,10 @@
+QB1 "How knowledgeable or not knowledgeable do you consider yourself to be regarding the <div class='tooltip'><b>European union’s regulatory landscape and approval</b><span class='tooltiptext'>Please note that by this, we are referring to the scientific evaluation and approval of medicines, as opposed to specific access and reimbursement protocols that may be prominent for your country / region</span></div> processes when it comes to new medicines within Neurology<p/>(Please rate your knowledge and understanding on the scale below where 1 = Not at all and 5= Extremely. You have the option to click ‘Don’t Know’ if you do not wish to respond to this question)"
+    categorical [1..1]
+    {
+        _1 "1 – Not at all knowledgeable / Do not understand at all",
+        _2 "2 - Not very knowledgeable",
+        _3 "3 – Knowledgeable",
+        _4 "4 - Very knowledgeable",
+        _5 "5 – Extremely knowledgeable / Understand extremely well",
+        Dontknow "Don’t Know"
+    };
