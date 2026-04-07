@@ -1,8 +1,0 @@
-IOM.banners.Remove("JSFile2")
-
-Grid_QSSegment1.LayoutTemplate="FI011_Template.htm"
-ShowQuestionNo(IOM,"QSSegment1")
-Grid_QSSegment1.Ask()
-
-IOM.Banners.AddNew("JSFile2","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIDP/jquery.js""></script>")
-IOM.LayoutTemplate="SurveyTemplate_DA.htm"
