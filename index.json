@@ -90,5 +90,18 @@
     "projectId": "UK250742250102",
     "addedBy": "Parveen Jindal",
     "path": "patterns/age-screening-using-dob-text-input-under-18-termination"
+  },
+  {
+    "id": "prf-section",
+    "title": "PRF section",
+    "description": "PRF section is patient profile section shown in loop for atleast 3 patients. PRF section questions can vary from project to project.",
+    "tags": [
+      "prf"
+    ],
+    "questionType": "PRF loop with block of questions (SA, MA, OE, Grid)",
+    "projectName": "25-078939-01-01 AZ HCC Himalaya ATU W13 2026 Q1",
+    "projectId": "UK250789390101",
+    "addedBy": "Clinton",
+    "path": "patterns/prf-section"
   }
 ]
