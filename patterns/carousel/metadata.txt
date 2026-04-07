@@ -1,0 +1,29 @@
+Grid_QB2 "You will now be shown a series of statements. For each, please select to what extent you agree or disagree that the European union’s regulatory landscape and approval processes for new treatments in Alzheimer’s disease is…<p/>(Please rate your agreement on the scale below where 1 = Completely disagree and 5= Completely agree. You have the option to click ‘Don’t Know’ if you do not wish to respond to this question)" loop
+    {
+        Preventi "Preventing you from prescribing new treatments in Alzheimer's Disease at all",
+        Preventi1 "Preventing you from prescribing new treatments in Alzheimer's Disease at the point within the patient journey you want to",
+        Preventi2 "Preventing you from prescribing new treatments in Alzheimer's Disease as frequently as you want to",
+        Preventi3 "Preventing Alzheimer’s disease innovation and treatment care",
+        CausingE "Causing European countries to fall behind other countries in terms of their Alzheimer’s disease knowledge and care",
+        Discoura "Discouraging investment in Alzheimer’s disease innovations",
+        Creating "Creating a divide vs. other countries where new treatments in Alzheimer's Disease are more readily available",
+        Noteffec "Not effectively basing approval decisions on scientific and/or published data",
+        Causingp "Causing patients and caregivers to seek new Alzheimer's disease treatments abroad",
+        Preventi4 "Preventing to address the diverse needs of Alzheimer's disease patients",
+        Restrict "Restricting patient choice",
+        Restrict1 "Restricting patients from receiving optimal care",
+        Slowingd "Slowing down the speed in which Neurologists wish to uncover the science of the brain"
+    } ran fields -
+    (
+        QB2 ""
+        categorical [1..1]
+        {
+            _1 "Completely disagree",
+            _2 "Disagree",
+            _3 "Neither agree, nor disagree",
+            _4 "Agree",
+            _5 "Completely agree",
+            Dontknow "Don’t Know"
+        };
+
+    ) expand grid;
