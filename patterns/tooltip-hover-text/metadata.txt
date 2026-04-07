@@ -1,0 +1,16 @@
+GRID_QSRx1 "Thinking of <b>all</b> your Mild Cognitive Impairment (MCI) and Alzheimer's disease patients over the last 3 months, how many are diagnosed with the following conditions?<p/>Please place your curser over the conditions to see the full description of each stage<p/>(Please enter numeric responses for each condition)" loop
+    {
+        Mildcogn "<div class='tooltip'>Mild cognitive impairment (MCI) – without suspected Alzheimer’s disease<span class='tooltiptext'><b>MCI (MILD COGNITIVE IMPAIRMENT):</b> <i>Forgetfulness of names/appointments (more than age would account for), but no significant effect on complex functions / Instrumental Activities of Daily Living (iADLs). You do not consider this to be related to Alzheimer’s disease</i></span></div>",
+        MildCogn2 "<div class='tooltip'>Mild Cognitive Impairment (MCI) indicating Alzheimer’s disease<span class='tooltiptext'><b>MILD COGNITIVE IMPAIRMENT (MCI) INDICATING AD:</b> <i>Forgetfulness of names/appointments (more than age would account for), but no significant effect on complex functions / Instrumental Activities of Daily Living (iADLs). You determine this to be a precursor to Alzheimer’s disease</i></span></div>",
+        Earlysta "<div class='tooltip'>Early stage / Mild Alzheimer’s Disease<span class='tooltiptext'><b>EARLY STAGE / MILD ALZHEIMER’S DISEASE:</b> <i>Memory impairment, significant difficulty with planning, organizing, household management, driving, complex tasks</i></span></div>",
+        Moderate "<div class='tooltip'>Moderate dementia due to Alzheimer’s disease<span class='tooltiptext'><b>MODERATE ALZHEIMER’S DISEASE:</b> <i>Worsening memory, disorientation, impaired judgment, needs supervision for more complex tasks and needs some assistance with basic self-care</i></span></div>",
+        Severede "<div class='tooltip'>Severe dementia due to Alzheimer’s disease<span class='tooltiptext'><b>SEVERE ALZHEIMER’S DISEASE:</b> <i>Significant language impairment, little/no environmental awareness, and requires help with all basic care needs</i></span></div>"
+    } fields -
+    (
+        QSRx1 ""
+            style(
+                Width = "4em"
+            )
+        long [0 .. 200];
+
+    ) expand grid;
