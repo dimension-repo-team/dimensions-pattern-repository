@@ -1,0 +1,7 @@
+ShowQuestionNo(IOM,"QA8")
+Grid_QA8.MustAnswer = false
+Grid_QA8.Validation.Function = "RunTotal"
+Grid_QA8.Banners.AddNew("AddPercent","<script type='text/javascript'>$(function()&#123;$('.mrEdit').after(' %');&#125;);</script>")
+jsShowRunTotalColumnsWiseP(IOM,Grid_QA8,{TOTAL},1,Grid_QA8.Categories.Count,"false","","",1,{EndText})
+DUMTOTAL = 100
+Grid_QA8.Ask()
