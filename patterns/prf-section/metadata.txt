@@ -1,0 +1,1035 @@
+''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''SECTION D: PRFs
+    ''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    CurrentMonthX "CurrentMonth"
+    categorical [1..1]
+    {
+        use lMonths -
+    };
+
+    Past3MonthX "Past3Month"
+    categorical [1..1]
+    {
+        use lMonths -
+    };
+
+    month_now "current month number"
+    long [1 .. 12];
+
+    CurrMN "Dummy variable"
+    long;
+
+    Past3MN "Dummy variable"
+    long;
+
+    year_now "current year number"
+    long [2021 .. 2026];
+
+    Ins_PRFIntrotxt "Insertion for PRFIntro text"
+    categorical [1..1]
+    {
+        France "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>•  Some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Germany "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Japan "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        China "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Italy "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Spain "Thank you very much for answering this first part of the survey.<p/>Based on your knowledge alone, could you share your experience with at least three patient profiles (and at most five) who: <br/>•	Are or have been adult patients (18 years or older) with unresectable or advanced HCC, not amenable to locoregional treatment.<br/>•	Should <b>HAVE STARTED</b> a 1L systemic oncologic treatment in the last {#Ins_QS6} (between <b>{#Past3MonthX} and {#CurrentMonthX}</b>)<br/>•	Should be receiving active systemic oncologic treatment.<p/>As a reminder: <br/>•	Do not provide any identifying information related to the patients' medical records.<br/>•	Do not provide information about your experience and knowledge of clinical trials<br/>•	Some questions may require estimates or judgments on your part. If you are not sure how to answer a question, please provide an approximate answer.",
+        UK "Thank you very much for completing this 1<sup>st</sup> part of the survey.<p/>We are seeking treatment information from <b><u>three</u></b> different patients. Each record should take 7 minutes to complete. <p/>For the <b>3 patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a 1L systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate"
+    };
+
+    PRFIntro "{#Ins_PRFIntrotxt}"
+    info;
+
+    Ins_PRFIntro2txt "Insertion for PRFIntro2 text"
+    categorical [1..1]
+    {
+        France "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Germany "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Japan "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        China "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Italy "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate",
+        Spain "Based on your knowledge alone, could you share your experience with up two 2<sup>nd</sup> line patient profiles who:<p/>•	Are or have been adult patients (18 years or older) with unresectable or advanced HCC, not amenable to locoregional treatment.<br/>•	Should <b>HAVE STARTED</b> a <b>2L</b> systemic oncologic treatment in the last 3 months (between {#Past3MonthX} and {#CurrentMonthX})<br/>•	Should be receiving active systemic oncologic treatment.<p/>•	As a reminder:<br/>•	Do not provide any identifying information related to the patients' medical records.<br/>•	Do not provide information about your experience and knowledge of clinical trials<br/>•	Some questions may require estimates or judgments on your part. If you are not sure how to answer a question, please provide an approximate answer.",
+        UK "For the <b>2<sup>nd</sup> line patients</b>, the details you provide should relate to patients that meet these criteria:<p/><b><u>INCLUSION CRITERIA:</u></b> <br/>•      Adult patients 18+ with <b>unresectable or advanced HCC,</b> <b>not amenable to locoregional treatment</b><br/>•  <b>INITIATED </b>on a <b>second line (2L)</b> systemic anti-cancer treatment <b>in the last {#Ins_QS6} (between {#Past3MonthX} and {#CurrentMonthX})</b><p/><b><u>EXCLUSION CRITERIA:</u></b> <br/>•     Please do <b>not</b> provide records for patients on <b>best supportive care. </b>Patients must be receiving an active anti-cancer systemic therapy<br/>• Please do <b>not</b> provide records for patients on a <b>clinical trial</b><p/>As a reminder:<br/>•        Please have the patient charts (i.e., EMR, paper charts) accessible during the survey to assist in completing the forms<br/>•     Each patient record form will take approximately 7 minutes of your time<br/>•     Please enter information for the <b>most recent patients you have seen in consultation</b> that meet the criteria<br/>•       Please do not provide any personally identifiable information related to the patient charts<br/>• While most responses should come directly from the patient chart, some questions may require estimates or judgements on your part.  If you are unsure of how to respond to a question, please provide your best estimate"
+    };
+
+    PRFIntro2 "{#Ins_PRFIntro2txt}"
+    info;
+
+    PRFIntro3 "<b>ATTENTION: please apply the following definitions<p/>Second line systemic treatment:<p/>Second-line (2L):</b> Drug treatment received <b>following disease progression during/after</b> a first-line systemic therapy treatment for unresectable or advanced HCC, not amenable to locoregional treatment.<p/><b>Please record each patient only <u>once</u>.</b>"
+    info;
+
+    PRFIntroATT "<b>ATTENTION:  please apply the following definitions</b><p/><b>First line systemic treatment: </b><p/>First anti-tumoral drug treatment received at <b>unresectable or advanced HCC</b> not amenable to loco-regional treatment<p/><b>Please record each patient only </b><b><u>once</u></b>"
+    info;
+
+    Ins_P1txt "Insertion for PRFLOOP P1 text"
+    categorical [1..1]
+    {
+        France "",
+        Germany "",
+        Japan "",
+        China "",
+        Italy "",
+        Spain " Profile",
+        UK ""
+    };
+
+    Ins_P2txt "Insertion for PRFLOOP P2 text"
+    categorical [1..1]
+    {
+        France "",
+        Germany "",
+        Japan "",
+        China "",
+        Italy "",
+        Spain " Profile",
+        UK ""
+    };
+
+    Ins_P3txt "Insertion for PRFLOOP P3 text"
+    categorical [1..1]
+    {
+        France "",
+        Germany "",
+        Japan "",
+        China "",
+        Italy "",
+        Spain " Profile",
+        UK ""
+    };
+
+    PRFLOOP " " loop
+    {
+        P1 "Patient{#Ins_P1txt} 1",
+        P2 "Patient{#Ins_P2txt} 2",
+        P3 "Patient{#Ins_P3txt} 3",
+        P4 "Patient{#Ins_P3txt} 4",
+        P5 "Patient{#Ins_P3txt} 5"
+    } fields -
+    (
+        Prog_PTNum "Programming purpose only"
+        categorical [1..1]
+        {
+            P1 "1<sup>st</sup>",
+            P2 "2<sup>nd</sup>",
+            P3 "3<sup>rd</sup>",
+            P4 "4<sup>th</sup>",
+            P5 "5<sup>th</sup>"
+        };
+
+        Ins_PTNumtxt "Insertion for InfoPTNum text"
+        categorical [1..1]
+        {
+            France "",
+            Germany "",
+            Japan "",
+            China "",
+            Italy "",
+            Spain " profile",
+            UK ""
+        };
+
+        Ins_PTNumtxt2 "Insertion for InfoPTNum text"
+        categorical [1..1]
+        {
+            France "",
+            Germany "",
+            Japan "",
+            China "",
+            Italy "",
+            Spain " profiles",
+            UK ""
+        };
+
+        InfoPTNum "<b>Please pull the <font color='blue'>{#Prog_PTNum}</font> patient{#Ins_PTNumtxt} chart.</b>"
+        info;
+
+        BLK0 "<center><b><font color='blue'>{@}</font></b></center><p/>" block fields
+        (
+            Q01Info "To confirm that you have pulled a qualifying chart, please confirm the following details for this patient:<p/>"
+            info;
+
+            Q01 "Current Age:"
+            categorical [1..1]
+            {
+                Below18 "Below 18 years old",
+                Above18 "18 years old or above"
+            };
+
+            Q02 "HCC Classification:"
+            categorical [1..1]
+            {
+                Resectab "Resectable HCC",
+                Unresect "Unresectable HCC, amenable to locoregional treatment",
+                Unresect1 "Unresectable HCC NOT amenable to locoregional treatment"
+            };
+
+            Q03 "Line of therapy (do not include best supportive care as a line of therapy):"
+            categorical [1..1]
+            {
+                Hasnotre "Has not received active therapy for unresectable HCC",
+                Firstlin "First-line (1L)",
+                Secondli "Second-line (2L)",
+                Thirdlin "Third-line (3L)",
+                Fourthli "Fourth-line (4L)",
+                Laterlin "Later-line (5L+)"
+            };
+
+            GRID_Q04 "Date of last cycle/dose administered/taken by patient:" loop
+            {
+                MM "Month (MM):",
+                YYYY "Year (YYYY):"
+            } fields -
+            (
+                Q04 ""
+                    style(
+                        Width = "5em"
+                    )
+                long [1 .. ];
+
+            ) expand grid;
+
+            Q04 "Date of last cycle/dose administered/taken by patient:"
+            categorical [1..1]
+            {
+                Withinth "Within the past 3 months",
+                Morethan "More than 3 months ago"
+            };
+
+        );
+
+        Ins_QE1txt "Insertion for QE1 question text"
+        categorical [1..1]
+        {
+            France "",
+            Germany "",
+            Japan "",
+            China "",
+            Italy "",
+            Spain " (approximately)",
+            UK ""
+        };
+
+        BLK1 "<center><b><font color='blue'>{@}: Patient Profile</font></b></center><p/>" block fields
+        (
+            QE1 "<b>Most recent consultation{#Ins_QE1txt}:</b>"
+            categorical [1..1]
+            {
+                Withinthe "Within the past 3 months",
+                Morethan3 "More than 3 months ago"
+            };
+
+            QE2 "<b>Gender:</b>"
+            categorical [1..1]
+            {
+                Male "Male",
+                Female "Female",
+                Other1 "Other"
+            };
+
+            QE3 "<b>Age:</b>"
+            categorical [1..1]
+            {
+                _45years "<45 years old",
+                _4555yea "45-55 years old",
+                _5665yea "56-65 years old",
+                _6670yea "66-70 years old",
+                _7175yea "71-75 years old",
+                _75years ">75 years old",
+                Other1 "Other"
+            };
+
+            QE4 "<b>Insurance coverage:</b><br/><i>Single choice.</i>"
+            categorical [1..1]
+            {
+                Publicin "Public insurance",
+                Partiall "Partially private insurance",
+                Fullypri "Fully private insurance",
+                Other1 "Other/ Don’t know"
+            };
+
+        );
+
+        TxtBLK2 ""
+        categorical
+        {
+            _1 "",
+            _2 " at 1L Treatment Initiation"
+        };
+
+        BLK2 "<center><b><font color='blue'>{@}: Disease Profile{#TxtBLK2}</font></b></center><p/>" block fields
+        (
+            QE6 "<b>HCC stage:</b>"
+            categorical [1..1]
+            {
+                LocallyA "Locally Advanced (no distant organ metastases)",
+                Metastat "Metastatic"
+            };
+
+            QE7 "<b>BCLC Stage:</b>"
+            categorical [1..1]
+            {
+                BCLCStag "<div class='tooltip'><u>BCLC Stage 0 OR Very early stage</u><span class='tooltiptext'><i>This is defined as a solitary HCC &#8804; 2 cm without vascular invasion or extrahepatic spread in a patient with preserved liver function and no cancer-related symptoms.</i></span></div>",
+                BCLCStag1 "<div class='tooltip'><u>BCLC Stage A OR Early stage</u><span class='tooltiptext'><i>This is defined as solitary HCC irrespective of size or as a multifocal HCC up to 3 nodules (none of them >3 cm), without macrovascular invasion, extrahepatic spread or cancer-related symptoms (PS-0). Liver function must be preserved and not have reached LT criteria.</i></span></div>",
+                BCLCStag2 "<div class='tooltip'><u>BCLC Stage B OR Intermediate stage / Locally advanced</u><span class='tooltiptext'><i>This is defined as multifocal HCC (exceeding BCLC-A criteria) with preserved liver function, no cancer-related symptoms (PS 0) and no vascular invasion or extrahepatic spread.</i></span></div>",
+                BCLCStag3 "<div class='tooltip'><u>BCLC Stage C OR Advanced stage / Metastatic</u><span class='tooltiptext'><i>This stage includes patients presenting with vascular invasion or extrahepatic spread who are still relatively fit, as reflected by a PS &#8804; 2 at staging work-up, and who have preserved liver function.</i></span></div>",
+                BCLCStag4 "<div class='tooltip'><u>BCLC Stage D OR Advanced stage / Metastatic</u><span class='tooltiptext'><i>Patients with major cancer-related symptoms (PS >2) and/or impaired liver function without the option of LT due to HCC burden or non–HCC–related factors present poor short-term survival and belong to the BCLC stage D.</i></span></div>",
+                Notsure "<b>Not sure</b>"
+            };
+
+            QE8 "<b>HCC diagnosis status:</b>"
+            categorical [1..1]
+            {
+                denovoin "<i>de novo</i> in the unresectable/advanced setting",
+                Progress "Progressed from earlier stage diagnosis/treatment"
+            };
+
+            QE9 "<b>ECOG Performance Status:</b>"
+            categorical [1..1]
+            {
+                ECOG0 "ECOG 0",
+                ECOG1 "ECOG 1",
+                ECOG2 "ECOG 2",
+                ECOG3 "ECOG 3",
+                ECOG4 "ECOG 4",
+                Unknown "Unknown"
+            };
+
+            QE10 "<b>Number of distant metastases:</b>"
+                style(
+                    Width = "4em"
+                )
+            long [1 .. 99]
+            codes(
+            {
+                Dontknow "Don't know" exclusive,
+                None " " NA
+            } );
+
+            QE11 "<b>Distant metastases location(s):</b><br/><i>Select all that apply.</i>"
+            categorical
+            {
+                Lung "Lung",
+                Lymphnod "Lymph nodes",
+                Bone "Bone",
+                Adrenalg "Adrenal gland",
+                Peritone "Peritoneum and/or omentum",
+                Brain "Brain",
+                OtherSpe "Other (Specify):" other fix
+            };
+
+            QE12 "<b>Disease Characteristics:</b><br/><i>Select all that apply.</i>"
+            categorical [1..]
+            {
+                Portalve "Portal vein invasion",
+                Hepaticv "Hepatic vein invasion",
+                Decompen "Decompensation of baseline liver function",
+                Cirrhosi "Cirrhosis",
+                Ascites "Ascites",
+                OtherSpe "Other (Specify):" other fix,
+                Noneofth "None of the above" fix exclusive
+            };
+
+            QE13 "<b>Portal Vein Invasion Location:</b>"
+            categorical [0..1]
+            {
+                Vp1segme "VP1: segmental / 3<sup>rd</sup> order branch",
+                Vp2right "VP2: right anterior or posterior / 2<sup>nd</sup> order branch",
+                Vp3right "VP3: right or left PV / 1<sup>st</sup> order branch",
+                Vp4maint "VP4: main trunk",
+                VP4contr "VP4: contralateral branch",
+                Dontknow "Don't know" fix exclusive
+            };
+
+        );
+
+        BLK3 "<center><b><font color='blue'>{@}: Disease Profile{#TxtBLK2} (continued)</font></b></center><p/>" block fields
+        (
+            QE14 "<b>Number of nodules present:</b>"
+                style(
+                    Width = "4em"
+                )
+            long [0 .. 99]
+            codes(
+            {
+                Dontknow "Don't know" exclusive
+            } );
+
+            QE15 "<b>Largest nodule size:</b>"
+                style(
+                    Width = "4em"
+                )
+            double [0 .. 99]
+            scale(1) codes(
+            {
+                Dontknow "Don't know" exclusive
+            } );
+
+            QE16 "<b>Grade of GI Varices:</b>"
+            categorical [1..1]
+            {
+                Grade0no "Grade 0: no varices",
+                GradeIsm "Grade I: small, straight",
+                GradeIIe "Grade II: enlarged, tortuous",
+                GradeIII "Grade III: enlarged, coil-shaped",
+                Dontknow "Don't know"
+            };
+
+        );
+
+        Ins_QE17txt "Insertion for QE17 question text"
+        categorical [1..1]
+        {
+            France "Did the patient receive<b> treatment </b>for their <b>varices</b>?",
+            Germany "Did the patient receive<b> treatment </b>for their <b>varices</b>?",
+            Japan "Did the patient receive<b> treatment </b>for their <b>varices</b>?",
+            China "Did the patient receive<b> treatment </b>for their <b>varices</b>?",
+            Italy "Did the patient receive<b> treatment </b>for their <b>varices</b>?",
+            Spain "Received <b>treatment</b> for <b>varices</b>?",
+            UK "Did the patient receive<b> treatment </b>for their <b>varices</b>?"
+        };
+
+        Ins_QE19txt "Insertion for QE19 question text"
+        categorical [1..1]
+        {
+            France "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?",
+            Germany "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?",
+            Japan "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?",
+            China "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?",
+            Italy "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?",
+            Spain "Scoped with an <b>esophagogastro-duodenoscopy (EGD)</b> prior to first-line (1L) treatment?",
+            UK "Was this patient scoped with an <b>esophagogastro-duodenoscopy (EGD) </b>prior to first-line (1L) treatment?"
+        };
+
+        BLK4 "<center><b><font color='blue'>{@}: Disease Profile{#TxtBLK2} (continued)</font></b></center><p/>" block fields
+        (
+            QE17 "{#Ins_QE17txt}"
+            categorical [1..1]
+            {
+                Yes "Yes",
+                No "No",
+                Dontknow "Don't know"
+            };
+
+            QE18 "<b>Based on your clinical assessment, the patient has…</b>"
+            categorical [1..1]
+            {
+                Symptoma "Symptomatic disease",
+                Asymptom "Asymptomatic disease"
+            };
+
+            QE19 "{#Ins_QE19txt}"
+            categorical [1..1]
+            {
+                Yesbyref "Yes, by referring physician",
+                YesIorde "Yes, I ordered EGD",
+                No "No"
+            };
+
+        );
+
+        Ins_QE22txt "Insertion for QE22 question text"
+        categorical [1..1]
+        {
+            France "Patient risk characteristics",
+            Germany "Patient risk characteristics",
+            Japan "Patient risk characteristics",
+            China "Patient risk characteristics",
+            Italy "Patient risk characteristics",
+            Spain "Risk characteristics",
+            UK "Patient risk characteristics"
+        };
+
+        BLK5 "<center><b><font color='blue'>{@}: Disease Profile{#TxtBLK2} (continued)</font></b></center><p/>" block fields
+        (
+            QE20 "<b>Disease etiology:</b><br/><i>Select all that apply. </i>"
+            categorical [1..]
+            {
+                Hepatiti "Hepatitis B",
+                Hepatiti1 "Hepatitis C",
+                Alcoholr "Alcohol related liver disease",
+                Heredita "Hereditary liver disease",
+                Nonalcoh "Metabolic dysfunction-associated steatotic liver disease/ Metabolic dysfunction-associated steatohepatitis",
+                HIVHepat "HIV +/- Hepatitis B or C coinfection",
+                OtherSpe "Other (Specify):" other fix,
+                None "Don't know" NA
+            };
+
+            QE21 "<b>Child-Pugh Score:</b>"
+            categorical [1..1]
+            {
+                A5 "A5",
+                A6 "A6",
+                B7 "B7",
+                B8 "B8",
+                B9 "B9",
+                C "C",
+                Dontknow "Don't know"
+            };
+
+            QE22 "<b>{#Ins_QE22txt}:</b><br/><i>Select all that apply. </i>"
+            categorical [1..]
+            {
+                Signific "Significant recent bleeding.",
+                Highrisk "High risk of hemorrhagic complication (patient with no history of bleeding but at risk for it)",
+                Recentar "Recent arterial/venous thromboembolic disease.",
+                Othertum "Other tumor lesions with risk of bleeding or perforation.",
+                Symptoma "Symptomatic established vascular disease not amenable to revascularization.",
+                Untreate "Untreated symptomatic metastatic disease in CNS.",
+                Uncontro "Uncontrolled hypertension (with pharmacological treatment)",
+                Patients "Patients undergoing treatment with anticoagulant and/or antiplatelet drugs at high doses.",
+                Patients1 "Patients with unresolved fracture/ulcer/scar.",
+                Signific1 "Significant cardiovascular disease.",
+                Signific2 "Significant kidney failure.",
+                Nephroti "Nephrotic syndrome",
+                Difficul "Difficult-to-control hypertension (with at least 3 medications).",
+                Highcard "High cardiovascular risk, without adequate control of cardiovascular risk factors.",
+                Patientw "Patient with recent non-surgical bleeding",
+                OtherSpe "Other (Specify):" other fix,
+                None "None of the above" fix exclusive
+            } ran;
+
+        );
+
+        INS_QE20A ""
+        text;
+
+        QE21A "You mentioned that this patient{#Ins_PTNumtxt} has a Child-Pugh Score of {#INS_QE20A}. Based on the definitions provided, would you consider this patient{#Ins_PTNumtxt} to be Child-Pugh A with more or less aggressive disease?
+
+        <mrRef RefType=""img"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/QE20A.jpg""></mrRef>"
+        categorical [1..1]
+        {
+            ChildPug "Child-Pugh A with <b>less</b> aggressive disease",
+            ChildPug2 "Child-Pugh A with <b>more</b> aggressive disease",
+            Notsure "Not sure"
+        };
+
+        Ins_TxtQE24a "Insertion for QE24a question text"
+        categorical [1..1]
+        {
+            France "",
+            Germany "",
+            Japan "",
+            China "",
+            Italy "",
+            Spain " approximately",
+            UK ""
+        };
+
+        TxtQE24a "Hold the text for QE24a"
+        categorical [1..1]
+        {
+            _1 "Time on treatment to date{#Ins_TxtQE24a}:",
+            _2 "Time on 1<sup>st</sup> line treatment{#Ins_TxtQE24a}:"
+        };
+
+        Ins_TxtQE24b "Insertion for QE24b question text"
+        categorical [1..1]
+        {
+            France "",
+            Germany "",
+            Japan "",
+            China "",
+            Italy "",
+            Spain "Approximate ",
+            UK ""
+        };
+
+        TxtQE24b "Hold the text for QE24b"
+        categorical [1..1]
+        {
+            _1 "{#Ins_TxtQE24b}Total number of cycles <u>completed</u> to date:",
+            _2 "{#Ins_TxtQE24b}Total number of cycles <u>completed</u>:"
+        };
+
+        TxtQE38 ""
+        categorical
+        {
+            _1 "",
+            _2 "Please select the therapy that the patient was <b>initiated</b> on"
+        };
+
+        Ins_TxtQE23 "Insertion for QE23 question text"
+        categorical [1..1]
+        {
+            France "patient",
+            Germany "patient",
+            Japan "patient",
+            China "patient",
+            Italy "patient",
+            Spain "profile of patient",
+            UK "patient"
+        };
+
+        TxtQE23 "Hold the text for QE23"
+        categorical [1..1]
+        {
+            _1 "What is the <b>first-line (1L) anti-cancer therapy</b> that the {#Ins_TxtQE23} received / is currently receiving?",
+            _2 "What is the <b>first-line (1L) anti-cancer therapy</b> that this {#Ins_TxtQE23} received / is currently receiving?",
+            _3 "What was the <b>first-line (1L) anti-cancer therapy</b> that the {#Ins_TxtQE23} received?",
+            _4 "What was the <b>first-line (1L) anti-cancer therapy</b> that this {#Ins_TxtQE23} received?"
+        };
+
+        BLK6 "<center><b><font color='blue'>{@}: First-line (1L) HCC Treatment </font></b></center><p/>" block fields
+        (
+            QE23 "{#TxtQE23}<br/><br/><i>{#TxtQE38}</i>"
+            categorical [1..1]
+            {
+                Atezoliz "Atezolizumab + bevacizumab",
+                Durvalum1 "Durvalumab + tremelimumab",
+                Nivoluma "Nivolumab + ipilimumab",
+                Lenvatin "Lenvatinib monotherapy",
+                Sorafeni "Sorafenib monotherapy",
+                Durvalum "Durvalumab monotherapy",
+                Chemothe "Chemotherapy",
+                OtherPDL "Other PD-(L)1 monotherapy or combination therapies",
+                Others "Other"
+            };
+
+            QE24a "<b>{#TxtQE24a}</b>"
+            categorical [1..1]
+            {
+                Weeks "Weeks" other(_Weeks " " long [1 .. ] ),
+                Months "Months" other(_Months " " long [1 .. ] )
+            };
+
+            QE24b "<b>{#TxtQE24b}</b>"
+                style(
+                    Width = "2em"
+                )
+            long [0 .. 20]
+            codes(
+            {
+                Dontknow "Don't know" exclusive,
+                None " " NA
+            } );
+
+            QE25 "When was this {#Ins_TxtQE23} initiated on bevacizumab? "
+            categorical [0..1]
+            {
+                Cycle1 "Cycle 1",
+                Cycle2or "Cycle 2 or later cycles"
+            };
+
+            QE25A "How was atezolizumab administered for this {#Ins_TxtQE23} initiated on atezolizumab + bevacizumab?"
+            categorical [0..1]
+            {
+                SC "Subcutaneous (SC)",
+                IV "Intravenous (IV)"
+            };
+
+            QE26 "<b>What was the patients{#Ins_PTNumtxt2} eligibility for <u>immunotherapy</u> at the time of treatment initiation?</b>"
+            categorical [1..1]
+            {
+                Patient1 "Patient was <b>ineligible</b> for immunotherapy",
+                Patient2 "Patient was <b>eligible</b> for immunotherapy",
+                Didnotev "Did not evaluate",
+                Unknownu "Unknown/unable to measure"
+            };
+
+            QE26a "You mentioned earlier the patient{#Ins_PTNumtxt2} was <b>prescribed <span id = 'Q26a'></span></b> and was <b>ineligible for immunotherapy</b>. Is this correct?"
+            categorical [0..1]
+            {
+                Yes "Yes",
+                No "No"
+            };
+
+            QE27 "<b>What was the patients{#Ins_PTNumtxt2} eligibility for  <u>bevacizumab</u> at the time of treatment initiation?</b>"
+            categorical [1..1]
+            {
+                Patient1 "Patient was <b>ineligible</b> for bevacizumab",
+                Patient2 "Patient was <b>eligible</b> for bevacizumab",
+                Didnotev "Did not evaluate",
+                Unknownu "Unknown/unable to measure"
+            };
+
+            QE28 "You mentioned earlier the patient{#Ins_PTNumtxt} was <b>prescribed atezolizumab+bevacizumab</b> and was <b>ineligible for bevacizumab</b>. Is this correct?"
+            categorical [0..1]
+            {
+                Yes "Yes",
+                No "No"
+            };
+
+            QE29 "Did this patient{#Ins_PTNumtxt} receive <b>concurrent</b> surgery and/or locoregional therapy as part of the <b>1L uHCC</b> treatment plan?<br/><i>Please select all that apply.</i>"
+            categorical [1..]
+            {
+                Yessurge "Yes, surgery",
+                Yesablat "Yes, ablation therapy",
+                YesTACET "Yes, TACE/TAE",
+                YesTAREY "Yes, TARE/Y90",
+                Nothepat "No, the patient did not receive <b>concurrent</b> surgery or locoregional therapy as part of 1L uHCC treatment plan" fix exclusive
+            };
+
+        );
+
+        AEflag_QE23 "AEflag_QE23 : DURVLAUMAB + TREMELIMUMAB SELECTED"
+        categorical [1..1]
+        {
+            _True "True",
+            _False "False"
+        };
+
+        AEflag_QE29 "AEflag_QE29 : AE FLAG IF E23 = DURVA + TREME AND E29 = CODES 1,2,3,4 (YES) "
+        categorical [1..1]
+        {
+            _True "True",
+            _False "False"
+        };
+
+        Prog_QE23 "Programming purpose only"
+        categorical [1..1]
+        {
+            Atezoliz "Atezolizumab + bevacizumab",
+            Durvalum1 "Durvalumab + tremelimumab",
+            Nivoluma "Nivolumab + ipilimumab",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Durvalum "Durvalumab monotherapy",
+            Chemothe "Chemotherapy",
+            OtherPDL "Other PD-(L)1 monotherapy or combination therapies",
+            Others "Other"
+        };
+
+        Prog_QE31 "Programming purpose only::: AE Flag for QE31"
+        categorical
+        {
+            _1 "AE Flag - DURVA MONO or DURVA + TREME AND E31 = PROGRESSION",
+            _2 "AE Flag - DURVA + TREME AND E31 = HYPERPROGRESSION"
+        };
+
+        TextQE31 "TextQE31"
+        categorical
+        {
+            _1 "Progressive disease",
+            _2 "Progessive disease as expected"
+        };
+
+        Ins_TxtBLK7 "Insertion for BLK7 text"
+        categorical [1..1]
+        {
+            France "HCC Treatment History",
+            Germany "HCC Treatment History",
+            Japan "HCC Treatment History",
+            China "HCC Treatment History",
+            Italy "HCC Treatment History",
+            Spain "HCC",
+            UK "HCC Treatment History"
+        };
+
+        BLK7 "<center><b><font color='blue'>{@}: First-line (1L) {#Ins_TxtBLK7}</font> - <font color='red'>{#Prog_QE23}</font></b></center><p/>" block fields
+        (
+            QE30 "What was the goal of treatment with <b>{#Prog_QE23}</b>?"
+            categorical [1..1]
+            {
+                Intentto "Intent to downstage for transplant",
+                Intentto1 "Intent to downstage for embolization",
+                Intentto2 "Intent to downstage for resection",
+                Intentto3 "Intent to downstage for ablation",
+                Extendli "Extend life",
+                Diseasec "Disease control",
+                Palliati "Palliative treatment",
+                OtherSpe "Other (Specify):" other fix
+            };
+
+            QE31 "What was the <b>best response achieved</b> with this treatment?"
+            categorical [1..1]
+            {
+                Complete "Complete response",
+                Partialr "Partial response",
+                Stabledi "Stable disease",
+                Progress "{#TextQE31}",
+                Hyperpro "Hyperprogression",
+                Unknownu "Unknown/unable to measure"
+            };
+
+        );
+
+        QE32 "<center><b><font color='blue'>{@}: First-line (1L) HCC Treatment History</font> - <font color='red'>{#Prog_QE23}</font></b></center><p/><b>Reasons for selecting - {#Prog_QE23}</b><br/><i>Select all that apply.</i>"
+        categorical [1..]
+        {
+            H1 "<b><i>Clinical factors</i></b>"
+            {
+                hh1 " "
+                {
+                    Patienta "Patient age",
+                    Treatmen "Treatment contraindications",
+                    Patientc "Patient comorbidities",
+                    Patientf "Patient fitness/frailty",
+                    Betterqu "Better quality of life (QoL) for patient",
+                    Patientl "Patient lifestyle considerations (e.g., occupation, fertility)"
+                } ran,
+                hh2 " "
+                {
+                    Diseasec "Disease control",
+                    Yearlong "3-5-year long term survival data"
+                } ran,
+                hh3 " "
+                {
+                    Progress "Progression free survival (PFS) rate",
+                    Overalls "Overall survival (OS) rate",
+                    Durabler "Durable response"
+                } ran,
+                hh4 " "
+                {
+                    Fewersid "Fewer side effects",
+                    Lessrisk "Less risk of hepatotoxicity",
+                    Concerna "Concern about interaction with other medications patient is taking",
+                    Desireto "Desire to begin treatment immediately" fix
+                } ran
+            } ran,
+            H2 "<b><i>Non-clinical factors</i></b>"
+            {
+                Recommen "Recommended by national guidelines",
+                Recommen1 "Recommended by key opinion leaders in Oncology",
+                Reimburs "Reimbursement support",
+                Insuranc "Insurance",
+                Availabl "Available on formulary",
+                Patientr "Patient requested oral therapy"
+            } ran,
+            H3 "<br/>"
+            {
+                OtherSpe "<b>Other (Specify):</b>" other fix
+            } fix
+        };
+
+        QE33 "If a <b>similar patient{#Ins_PTNumtxt}</b> presented to you in <b>3 months from now</b>, which regimen would you anticipate prescribing to them?"
+        categorical [1..1]
+        {
+            Atezoliz "Atezolizumab + bevacizumab",
+            Durvalum1 "Durvalumab + tremelimumab",
+            Nivoluma "Nivolumab + ipilimumab",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Durvalum "Durvalumab monotherapy",
+            Chemothe "Chemotherapy",
+            OtherPDL "Other PD-(L)1 monotherapy or combination therapies",
+            Otherspe "Other"
+        };
+
+        QE34 "<center><b><font color='blue'>{@}: Prior Treatment History for HCC</font></b></center><p/>Which treatments, if any, did the patient{#Ins_PTNumtxt} receive prior to <b>{#Prog_QE23}</b>? Please include treatments given at any point in their HCC disease.<br/><i>(Select all that apply, from any stage, including adjunctive treatments)</i>"
+        categorical [1..]
+        {
+            Resectio "Resection",
+            Transpla "Transplant",
+            Ablation "Ablation",
+            TACEampD "TACE &amp; DEB-TACE (please specify # of cycles)" other(_TACEampD " " long [0 .. 99] ),
+            TAEofcyc "TAE (please specify # of cycles)" other(_TAEofcyc " " long [0 .. 99] ),
+            TAREofcy "TARE (please specify # of cycles)" other(_TAREofcy " " long [0 .. 99] ),
+            Radiothe "Radiotherapy (EBRT/SBRT)",
+            Systemic "Systemic Therapy",
+            Others "Other" fix,
+            None "None" fix exclusive
+        };
+
+        QE35 "<center><b><font color='blue'>{@}: Prior Treatment History for HCC</font></b></center><p/><b>Prior Systemic Therapy</b>"
+        categorical [1..1]
+        {
+            Atezoliz "Atezolizumab/bevacizumab",
+            Durvalum1 "PD-(L)1 + CTLA-4",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Durvalum "PD-(L)1 monotherapy",
+            Chemothe "Chemotherapy",
+            Others1 "Other"
+        };
+
+        Prog_QE36 "Dummy variable"
+        categorical
+        {
+            Resectio "Resection",
+            Transpla "Transplant",
+            Ablation "Ablation",
+            TACEampD "TACE &amp; DEB-TACE",
+            TAEofcyc "TAE",
+            TAREofcy "TARE",
+            Radiothe "Radiotherapy (EBRT/SBRT)",
+            Atezoliz "Atezolizumab/bevacizumab",
+            Durvalum1 "PD-(L)1 + CTLA-4",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Durvalum "PD-(L)1 monotherapy",
+            Chemothe "Chemotherapy",
+            Others1 "Other"
+        };
+
+        GRID_QE36 "<center><b><font color='blue'>{@}: Prior Treatment History for HCC</font></b></center><p/>In which <b>order</b> did the patient{#Ins_PTNumtxt} receive the selected treatments?<p/><i>Please order the treatments in terms of sequence, where 1 = the first treatment given, 2 = the second treatment given and so on.</i><p/><i>If two (or more) treatments were given concurrently, please indicate the same number for both.</i>" loop
+        {
+            Resectio "Resection",
+            Transpla "Transplant",
+            Ablation "Ablation",
+            TACEampD "TACE &amp; DEB-TACE",
+            TAEofcyc "TAE",
+            TAREofcy "TARE",
+            Radiothe "Radiotherapy (EBRT/SBRT)",
+            Systemic "Systemic Therapy",
+            Atezoliz "Atezolizumab/bevacizumab",
+            Durvalum1 "PD-(L)1 + CTLA-4",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Durvalum "PD-(L)1 monotherapy",
+            Chemothe "Chemotherapy",
+            Others1 "Other"
+        } fields -
+        (
+            QE36 ""
+                style(
+                    Width = "4em"
+                )
+            long [1 .. ];
+
+        ) expand grid;
+
+        QE37 "<center><b><font color='blue'>{@}: Prior Treatment History for HCC</font></b></center><p/><b>Reason for treatment discontinuation:</b>"
+        categorical [1..]
+        {
+            Evidence "Evidence of radiographic progression",
+            Evidence1 "Evidence of clinical progression",
+            Insuffici "Insufficient response to treatment",
+            Unmanagea "Unmanageable / unacceptable side effects",
+            Patientde "Patient declined further treatment",
+            Patientco "Patient could not tolerate treatment/AEs",
+            Patientpr "Patient preference",
+            Otherreas "Other reason(s) not related to disease progression or unacceptable side effects"
+        };
+
+        Prog_QE37 "Programming purpose only:::: E23=DURVA-TREME or DURVA MONO AND E37 = 1,2,3,4, OR 6"
+        categorical [1..1]
+        {
+            _1 "AE Flag"
+        };
+
+        Ins_TxtQE38 "Insertion for QE38 question text"
+        categorical [1..1]
+        {
+            France "the patient",
+            Germany "the patient",
+            Japan "the patient",
+            China "the patient",
+            Italy "the patient",
+            Spain "this profile of patient",
+            UK "the patient"
+        };
+
+        BLK8 "<center><b><font color='blue'>{@}: Current Second-line (2L) HCC Treatment </font></b></center><p/>" block fields
+        (
+            QE38 "What is the <b>second-line (2L) anti-cancer therapy</b> that {#Ins_TxtQE38} received / is currently receiving?<p/><i>{#TxtQE38}</i>"
+            categorical [1..1]
+            {
+                Regorafe "Regorafenib",
+                Ramuciru "Ramucirumab",
+                Cabozant "Cabozantinib",
+                Atezoliz "Atezolizumab + bevacizumab",
+                Durvalum1 "Durvalumab + tremelimumab",
+                Nivoluma "Nivolumab + ipilimumab",
+                Lenvatin "Lenvatinib monotherapy",
+                Sorafeni "Sorafenib monotherapy",
+                Durvalum "Durvalumab monotherapy",
+                Chemothe "Chemotherapy",
+                Otherspe "Other"
+            };
+
+            QE39 "<b>Time on treatment to date{#Ins_TxtQE24a}:</b>"
+            categorical [1..1]
+            {
+                Weeks "Weeks" other(_Weeks " " long [1 .. ] ),
+                Months "Months" other(_Months " " long [1 .. ] )
+            };
+
+            QE40 "<b>{#Ins_TxtQE24b}Total number of cycles <u>completed</u> to date:</b>"
+                style(
+                    Width = "2em"
+                )
+            long [0 .. 20]
+            codes(
+            {
+                Dontknow "Don't know" exclusive,
+                None " " NA
+            } );
+            '            };
+            '            QE43 "What was the <b>best response achieved</b> with this treatment?"
+            '            categorical [1..1]
+            '            {
+            '                Complete "Complete response",
+            '                Partialr "Partial response",
+            '                Stabledi "Stable disease",
+            '                Progress "Progressive disease",
+            '                Unknownu "Unknown/unable to measure"
+            
+
+        );
+
+        AEflag_QE38 "Programming purpose only::: AE FLAG IF E38 DURVA MONO or DURVA + TREME "
+        categorical [1..1]
+        {
+            _1 "AE Flag"
+        };
+
+        '        AEflag_QE43 "Programming purpose only::: AE Flag for QE43"
+        '        categorical [1..1]
+        '        {
+        '            _1 "AE Flag"
+        '        };
+        Prog_QE38 "Piping for QE38"
+        categorical [1..1]
+        {
+            Atezoliz "Atezolizumab + bevacizumab",
+            Durvalum1 "Durvalumab + tremelimumab",
+            Nivoluma "Nivolumab + ipilimumab",
+            Lenvatin "Lenvatinib monotherapy",
+            Sorafeni "Sorafenib monotherapy",
+            Regorafe "Regorafenib",
+            Ramuciru "Ramucirumab",
+            Cabozant "Cabozantinib",
+            Durvalum "Durvalumab monotherapy",
+            Chemothe "Chemotherapy",
+            Otherspe "Other"
+        };
+
+        QE41 "<center><b><font color='blue'>{@}: Current Second-line (2L) HCC Treatment</font></b></center><p/><b>Reasons for selecting - {#Prog_QE38}</b><br/><i>Select all that apply.</i>"
+        categorical [1..]
+        {
+            H1 "<b><i>Clinical factors</i></b>"
+            {
+                hh1 " "
+                {
+                    Patienta "Patient age",
+                    Treatmen "Treatment contraindications",
+                    Patientc "Patient comorbidities",
+                    Patientf "Patient fitness/frailty",
+                    Betterqu "Better quality of life (QoL) for patient",
+                    Patientl "Patient lifestyle considerations (e.g., occupation, fertility)"
+                } ran,
+                hh2 " "
+                {
+                    Diseasec "Disease control",
+                    Yearlong "3/4-year long term survival data"
+                } ran,
+                hh3 " "
+                {
+                    Progress "Progression free survival (PFS) rate",
+                    Overalls "Overall survival (OS) rate",
+                    Durabler "Durable response"
+                } ran,
+                hh4 " "
+                {
+                    Fewersid "Fewer side effects",
+                    Lessrisk "Less risk of hepatotoxicity",
+                    Concerna "Concern about interaction with other medications patient is taking",
+                    Desireto "Desire to begin treatment immediately" fix
+                } ran
+            } ran,
+            H2 "<b><i>Non-clinical factors</i></b>"
+            {
+                Recommen "Recommended by national guidelines",
+                Recommen1 "Recommended by key opinion leaders in Oncology",
+                Reimburs "Reimbursement support",
+                Insuranc "Insurance",
+                Availabl "Available on formulary",
+                Patientr "Patient requested oral therapy"
+            } ran,
+            H3 "<br/>"
+            {
+                OtherSpe "<b>Other (Specify):</b>" other fix
+            } fix
+        };
+
+    ) expand grid;

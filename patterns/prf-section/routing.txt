@@ -1,0 +1,1165 @@
+''''---------------------------------------------------------------
+''SECTION D: PRFs
+''''---------------------------------------------------------------
+
+month_now = CLong(Month(Now()))
+year_now = CLong(Year(Now()))
+
+dim n1,n2
+n1 = Month(Now())
+
+if ContainsAny(MRK_QCountry,{China}) then
+        if n1 > 6 then
+                n2 = n1 - 6
+        else
+                n2 = 12 + n1 - 6
+        end if
+Else
+        if n1 > 3 then
+                n2 = n1 - 3
+        else
+                n2 = 12 + n1 - 3
+        end if
+End If
+
+CurrentMonthX = ccategorical("_" + ctext(n1))
+Past3MonthX = ccategorical("_" + ctext(n2))
+
+CurrMN = n1
+Past3MN = n2
+
+''---------------------------------------------------------------
+
+''---------------------------------------------------------------
+if not containsany(MRK_QCountry,{Italy}) then
+	Ins_PRFIntrotxt.Response = MRK_QCountry.Response
+	Ins_PRFIntro2txt.Response = MRK_QCountry.Response
+	
+	ShowQuestionNo(IOM,"")
+	PRFIntro.Show()
+	
+	Ins_P1txt.Response = MRK_QCountry.Response
+	Ins_P2txt.Response = MRK_QCountry.Response
+	Ins_P3txt.Response = MRK_QCountry.Response
+	
+	''---------------------------------------------------------------
+	
+	AE_FLAG_DETAILS.Label.Inserts["INS2"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS3"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS4"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS5"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS6"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS7"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS8"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS9"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS10"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS11"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS12"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS13"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS14"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS15"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS16"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS17"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS18"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS19"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS20"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS21"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS22"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS23"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS24"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS25"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS26"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS27"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS28"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS29"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS30"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS31"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS32"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS33"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS34"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS35"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS36"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS37"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS38"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS39"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS40"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS41"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS42"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS43"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS44"] = ""
+	AE_FLAG_DETAILS.Label.Inserts["INS45"] = ""
+	
+	''---------------------------------------------------------------
+	DIM pcntr
+	pcntr = 0
+	
+	'DIM cat
+	
+	PRFLOOP.Categories = PRFLOOP.Categories - {P4,P5}
+	
+	'if ContainsAny(MRK_QCountry,{Spain}) then
+	'	PRFLOOP.Categories = PRFLOOP.Categories - {P4,P5}
+	'end if
+	
+	'if ContainsAny(M3PRF,{M3PRF}) then
+	'	PRFLOOP.Categories = PRFLOOP.Categories - {P4,P5}
+	'end if
+	
+	FOR EACH cat In PRFLOOP.Categories
+	        ''---------------------------------------------------------------
+	        ''---------------------------------------------------------------
+	        if cat = {P1} then
+	            ShowQuestionNo(IOM,"")
+	            PRFIntroATT.Show()
+	        end if
+	        
+	'        if not ContainsAny(MRK_QCountry,{Spain}) then
+		        if cat = {P4} then
+		            ShowQuestionNo(IOM,"")
+		            PRFIntro2.Show()
+		            
+		            ShowQuestionNo(IOM,"")
+		            PRFIntro3.Show()
+		        end if
+	'	   	end if
+	        
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        PRFLOOP[cat].Ins_PTNumtxt = MRK_QCountry.Response
+	        PRFLOOP[cat].Ins_PTNumtxt2 = MRK_QCountry.Response
+	        
+	        PRFLOOP[cat].Prog_PTNum = cat
+	        ShowQuestionNo(IOM,"")
+	        PRFLOOP[cat].InfoPTNum.Show()
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        if not ContainsAny(MRK_QCountry,{Spain}) then
+		        If cat = {P1} Or cat = {P2} Or cat = {P3} Then         
+			        ShowQuestionNo(IOM,"Q01,Q02,Q03,Q04")
+			       	If ContainsAny(MRK_QCountry,{France}) then 
+			       		PRFLOOP[cat].BLK0.QuestionFilter = "Q01Info,Q01,Q02,Q03,Q04"
+			       	Else
+			       		PRFLOOP[cat].BLK0.QuestionFilter = "Q01Info,Q01,Q02,Q03,GRID_Q04"
+			       	End If
+			        PRFLOOP[cat].BLK0.QuestionTemplate = "Block.htm"
+			        'PRFLOOP[cat].BLK0.Q01.Banners.AddNew("Q01","<script type='text/javascript'>$(function()&#123;$('[name=""_QBLK0_QQ01""]').after('"+ prog_jsBanner.Categories[{years}].Label +"');&#125;);</script>")
+			        PRFLOOP[cat].BLK0.GRID_Q04[{MM}].Q04.Validation.MaxValue = 12
+			        PRFLOOP[cat].BLK0.GRID_Q04[{YYYY}].Q04.Validation.MinValue = 2023
+			        PRFLOOP[cat].BLK0.GRID_Q04[{YYYY}].Q04.Validation.MaxValue = year_now
+			        PRFLOOP[cat].BLK0.Validation.Function = "VALBLK0"
+			        PRFLOOP[cat].BLK0.Ask()		        
+			    End If
+			end if
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        PRFLOOP[cat].Ins_QE1txt = MRK_QCountry.Response
+	        
+	        ShowQuestionNo(IOM,"E1,E2,E3,E4")
+	        if ContainsAny(MRK_QCountry,{Germany}) then PRFLOOP[cat].BLK1.QuestionFilter = "QE1,QE4"
+	        if ContainsAny(MRK_QCountry,{France,Japan,Italy,Spain,UK}) then PRFLOOP[cat].BLK1.QuestionFilter = "QE1,QE2,QE3,QE4"
+	        if ContainsAny(MRK_QCountry,{France}) then PRFLOOP[cat].BLK1.QE2.Categories.Filter = {} + {Male,Female}
+	        PRFLOOP[cat].BLK1.QuestionTemplate = "Block.htm"
+	        ''PRFLOOP[cat].BLK1.GRID_QE1[{MM}].QE1.Validation.MaxValue = 12
+	        ''PRFLOOP[cat].BLK1.GRID_QE1[{YYYY}].QE1.Validation.MinValue = 2023
+	        ''PRFLOOP[cat].BLK1.GRID_QE1[{YYYY}].QE1.Validation.MaxValue = year_now
+	        PRFLOOP[cat].BLK1.Validation.Function = "VALBLK1"
+	        PRFLOOP[cat].BLK1.Ask()
+	        
+	        If answercount(PRFLOOP[cat].BLK1.QE2) > 0 Then 
+				If Cat = {P1} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P1_BLK1_QE2}				
+					AE_FLAG_DETAILS.Label.Inserts["INS31"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P1_BLK1_QE2}].Label				
+				End If			
+				If Cat = {P2} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P2_BLK1_QE2}				
+					AE_FLAG_DETAILS.Label.Inserts["INS32"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P2_BLK1_QE2}].Label	
+				End If
+				If Cat = {P3} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P3_BLK1_QE2}				
+					AE_FLAG_DETAILS.Label.Inserts["INS33"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P3_BLK1_QE2}].Label
+				End If
+				If Cat = {P4} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P4_BLK1_QE2}				
+					AE_FLAG_DETAILS.Label.Inserts["INS34"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P4_BLK1_QE2}].Label
+				End If
+		        If Cat = {P5} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P5_BLK1_QE2}				
+					AE_FLAG_DETAILS.Label.Inserts["INS35"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P5_BLK1_QE2}].Label
+				End If
+			end if
+					
+	        If answercount(PRFLOOP[cat].BLK1.QE3) > 0 Then 
+				If Cat = {P1} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P1_BLK1_QE3}				
+					AE_FLAG_DETAILS.Label.Inserts["INS36"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P1_BLK1_QE3}].Label				
+				End If			
+				If Cat = {P2} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P2_BLK1_QE3}				
+					AE_FLAG_DETAILS.Label.Inserts["INS37"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P2_BLK1_QE3}].Label	
+				End If
+				If Cat = {P3} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P3_BLK1_QE3}				
+					AE_FLAG_DETAILS.Label.Inserts["INS38"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P3_BLK1_QE3}].Label
+				End If
+				If Cat = {P4} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P4_BLK1_QE3}				
+					AE_FLAG_DETAILS.Label.Inserts["INS39"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P4_BLK1_QE3}].Label
+				End If
+		        If Cat = {P5} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P5_BLK1_QE3}				
+					AE_FLAG_DETAILS.Label.Inserts["INS40"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P5_BLK1_QE3}].Label
+				End If
+			end if
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	'        if ContainsAny(MRK_QCountry,{China}) then
+	''               ShowQuestionNo(IOM,"E5")
+	''               PRFLOOP[cat].GRID_QE5.Ask()
+	'        End if
+	        ''---------------------------------------------------------------
+	
+			If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+				PRFLOOP[cat].TxtBLK2 = {_1}
+			Else
+				PRFLOOP[cat].TxtBLK2 = {_2}
+			End If
+	
+	        ''---------------------------------------------------------------
+	        IOM.LayoutTemplate = "SurveyTemplate_DA_ToolTip.htm"
+	        IOM.Banners.AddNew("BLK2" , "<script type = ""text/javascript"" src= ""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/Block2.js""></script>")
+	        ShowQuestionNo(IOM,"E6,E7,E8,E9,E10,E11,E12,E13")
+	        PRFLOOP[cat].BLK2.QuestionTemplate = "Block.htm"
+	        PRFLOOP[cat].BLK2.QE10.MustAnswer = false
+	        PRFLOOP[cat].BLK2.Validation.Function = "VALBLK2"
+	        PRFLOOP[cat].BLK2.Ask()
+	        IOM.LayoutTemplate = "SurveyTemplate_DA.htm"
+	        IOM.Banners.Remove("BLK2")
+	        			
+	        If answercount(PRFLOOP[cat].BLK2.QE6) > 0 Then 
+				If Cat = {P1} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P1_BLK2_QE6}				
+					AE_FLAG_DETAILS.Label.Inserts["INS41"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P1_BLK2_QE6}].Label				
+				End If			
+				If Cat = {P2} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P2_BLK2_QE6}				
+					AE_FLAG_DETAILS.Label.Inserts["INS42"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P2_BLK2_QE6}].Label	
+				End If
+				If Cat = {P3} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P3_BLK2_QE6}				
+					AE_FLAG_DETAILS.Label.Inserts["INS43"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P3_BLK2_QE6}].Label
+				End If
+				If Cat = {P4} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P4_BLK2_QE6}				
+					AE_FLAG_DETAILS.Label.Inserts["INS44"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P4_BLK2_QE6}].Label
+				End If
+		        If Cat = {P5} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P5_BLK2_QE6}				
+					AE_FLAG_DETAILS.Label.Inserts["INS45"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P5_BLK2_QE6}].Label
+				End If
+			end if
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        ShowQuestionNo(IOM,"E14,E15,E16")
+	        PRFLOOP[cat].BLK3.QuestionTemplate = "Block.htm"
+	        PRFLOOP[cat].BLK3.QE15.Banners.AddNew("Q01","<script type='text/javascript'>$(function()&#123;$('[name=""_QBLK3_QQE15""]').after('"+ prog_jsBanner.Categories[{mm}].Label +"');&#125;);</script>")
+	        PRFLOOP[cat].BLK3.Ask()
+	        PRFLOOP[cat].BLK3.QE15.Banners.Remove("Q01")
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        PRFLOOP[cat].Ins_QE17txt = MRK_QCountry.Response
+	        PRFLOOP[cat].Ins_QE19txt = MRK_QCountry.Response
+	        
+	        ShowQuestionNo(IOM,"E17,E18,E19")        
+	        if (NOT ContainsAny(PRFLOOP[cat].BLK3.QE16,{Grade0no})) then PRFLOOP[cat].BLK4.QuestionFilter = "QE17,QE18,QE19"
+	        if (ContainsAny(PRFLOOP[cat].BLK3.QE16,{Grade0no})) then PRFLOOP[cat].BLK4.QuestionFilter = "QE18,QE19"
+	        PRFLOOP[cat].BLK4.QuestionTemplate = "Block.htm"
+	        PRFLOOP[cat].BLK4.Ask()
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        PRFLOOP[cat].Ins_QE22txt = MRK_QCountry.Response
+	        
+	        IOM.Banners.AddNew("BLK5" , "<script type = ""text/javascript"" src= ""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/Block5.js""></script>")
+	        ShowQuestionNo(IOM,"E20,E21,E22")           
+	        PRFLOOP[cat].BLK5.QuestionTemplate = "Block.htm"
+	        'PRFLOOP[cat].BLK5.Validation.Function = "VALBLK5"
+	        PRFLOOP[cat].BLK5.Ask()
+	        IOM.Banners.Remove("BLK5")
+	        ''---------------------------------------------------------------
+	
+	        PRFLOOP[cat].INS_QE20A.Response =  PRFLOOP[cat].BLK5.QE21.Response.Label
+	
+			if (ContainsAny(PRFLOOP[cat].BLK5.QE21,{A5})) or  (ContainsAny(PRFLOOP[cat].BLK5.QE21,{A6})) then
+		        ShowQuestionNo(IOM,"QE21A")
+		        PRFLOOP[cat].QE21A.Ask()		
+			End if
+			
+	        ''---------------------------------------------------------------    
+	        if ContainsAny(MRK_QCountry,{France,Germany,Italy,Spain,UK}) then         	
+	        	PRFLOOP[cat].TxtQE38 = {_1}
+	        Else
+	        	PRFLOOP[cat].TxtQE38 = {_2}
+	        End If    
+	        
+	        PRFLOOP[cat].Ins_TxtQE23 = MRK_QCountry.Response
+	        PRFLOOP[cat].Ins_TxtQE24a = MRK_QCountry.Response
+	        PRFLOOP[cat].Ins_TxtQE24b = MRK_QCountry.Response
+	        
+	        If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+				PRFLOOP[cat].TxtQE24a = {_1}
+				PRFLOOP[cat].TxtQE24b = {_1}
+				
+				if ContainsAny(MRK_QCountry,{France,Germany,Italy,UK}) then 
+					PRFLOOP[cat].TxtQE23 = {_1}
+				Else
+					PRFLOOP[cat].TxtQE23 = {_2}
+				End If
+				
+				PRFLOOP[cat].BLK6.QuestionFilter = "QE23,QE24a,QE24b,QE25,QE25A,QE26,QE26a,QE27,QE28,QE29"
+				IOM.Banners.AddNew("BLK6" , "<script type = ""text/javascript"" src= ""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/Block6a.js""></script>")
+			Else
+				PRFLOOP[cat].TxtQE24a = {_2}
+				PRFLOOP[cat].TxtQE24b = {_2}
+				
+				if ContainsAny(MRK_QCountry,{France,Germany,Italy,UK}) then
+					PRFLOOP[cat].TxtQE23 = {_3}
+				Else
+					PRFLOOP[cat].TxtQE23 = {_4}
+				End If
+				
+				PRFLOOP[cat].BLK6.QuestionFilter = "QE23,QE24a,QE24b,QE26,QE26a,QE27,QE28"
+				IOM.Banners.AddNew("BLK6" , "<script type = ""text/javascript"" src= ""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/Block6b.js""></script>")
+			End If		        
+	        
+	        ShowQuestionNo(IOM,"E23,E24a,E24b,E25,E25A,E26,E26a,E27,QE28,E29")
+	        if ContainsAny(MRK_QCountry,{Germany,Japan}) then PRFLOOP[cat].BLK6.QE23.Categories.Filter = {} + {Atezoliz,Durvalum,Nivoluma,Lenvatin,Sorafeni,Durvalum1,Chemothe,OtherPDL,Others}
+	        if ContainsAny(MRK_QCountry,{China}) then PRFLOOP[cat].BLK6.QE23.Categories.Filter = {} + {Atezoliz,Nivoluma,Lenvatin,Sorafeni,Chemothe,OtherPDL,Others}
+	        if ContainsAny(MRK_QCountry,{France,Italy,Spain}) then PRFLOOP[cat].BLK6.QE23.Categories.Filter = {} + {Atezoliz,Durvalum1,Nivoluma,Lenvatin,Sorafeni,Chemothe,OtherPDL,Others}
+	        if ContainsAny(MRK_QCountry,{UK}) then PRFLOOP[cat].BLK6.QE23.Categories.Filter = {} + {Atezoliz,Durvalum1,Lenvatin,Sorafeni,Chemothe,OtherPDL,Others}
+	        PRFLOOP[cat].BLK6.QE24a.Categories[{Weeks}].OtherQuestion.Style.Width = "3em"
+	        PRFLOOP[cat].BLK6.QE24a.Categories[{Months}].OtherQuestion.Style.Width = "3em"
+	        PRFLOOP[cat].BLK6.QE24a.Categories[{Weeks}].OtherQuestion.Validation.MaxValue = 24
+	        PRFLOOP[cat].BLK6.QE24a.Categories[{Months}].OtherQuestion.Validation.MaxValue = 6        
+	        PRFLOOP[cat].BLK6.QuestionTemplate = "Block.htm"
+	        PRFLOOP[cat].BLK6.QE24b.MustAnswer = false
+	        If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+	        	PRFLOOP[cat].BLK6.Validation.Function = "VALBLK6"
+	        Else
+	        	PRFLOOP[cat].BLK6.Validation.Function = "VALBLK6a"
+	        End If
+	        PRFLOOP[cat].BLK6.Ask()
+	        IOM.Banners.Remove("BLK6")
+	
+	        PRFLOOP[cat].Prog_QE23 = PRFLOOP[cat].BLK6.QE23
+	        PRFLOOP[cat].Prog_QE23.Categories.Filter = PRFLOOP[cat].Prog_QE23.Response
+	        
+	'        if ContainsAny(MRK_QCountry,{UK}) then
+	'	        If containsany(PRFLOOP[cat].Prog_QE23,{Durvalum1}) Then 
+	'				PRFLOOP[cat].AEflag_QE23 = {_True}
+	'				
+	'				'Marking AE Flag				
+	'				If Cat = {P1} Then
+	'					Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_BLK6_QE23}				
+	'					AE_FLAG_DETAILS.Label.Inserts["INS1"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_BLK6_QE23}].Label				
+	'				End If			
+	'				If Cat = {P2} Then
+	'					Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_BLK6_QE23}				
+	'					AE_FLAG_DETAILS.Label.Inserts["INS2"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_BLK6_QE23}].Label	
+	'				End If
+	'				If Cat = {P3} Then
+	'					Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_BLK6_QE23}				
+	'					AE_FLAG_DETAILS.Label.Inserts["INS3"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_BLK6_QE23}].Label
+	'				End If
+	'				If Cat = {P4} Then
+	'					Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_BLK6_QE23}				
+	'					AE_FLAG_DETAILS.Label.Inserts["INS4"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_BLK6_QE23}].Label
+	'				End If
+	'                If Cat = {P5} Then
+	'					Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_BLK6_QE23}				
+	'					AE_FLAG_DETAILS.Label.Inserts["INS5"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_BLK6_QE23}].Label
+	'				End If				
+	'			else
+	'				PRFLOOP[cat].AEflag_QE23 = {_False}
+	'			end if
+	'			If IOM.Info.IsDebug Or IOM.Info.IsTest Then PRFLOOP[cat].AEflag_QE23.Show()
+	'		end if
+			
+			If answercount(PRFLOOP[cat].BLK6.QE27) > 0 Then
+				If Cat = {P1} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P1_BLK6_QE27}				
+					AE_FLAG_DETAILS.Label.Inserts["INS26"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P1_BLK6_QE27}].Label				
+				End If			
+				If Cat = {P2} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P2_BLK6_QE27}				
+					AE_FLAG_DETAILS.Label.Inserts["INS27"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P2_BLK6_QE27}].Label	
+				End If
+				If Cat = {P3} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P3_BLK6_QE27}				
+					AE_FLAG_DETAILS.Label.Inserts["INS28"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P3_BLK6_QE27}].Label
+				End If
+				If Cat = {P4} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P4_BLK6_QE27}				
+					AE_FLAG_DETAILS.Label.Inserts["INS29"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P4_BLK6_QE27}].Label
+				End If
+	            If Cat = {P5} Then
+					Mrk_Non_AE_Questions = Mrk_Non_AE_Questions + {PRFLOOP_P5_BLK6_QE27}				
+					AE_FLAG_DETAILS.Label.Inserts["INS30"] = Mrk_Non_AE_Questions.Categories[{PRFLOOP_P5_BLK6_QE27}].Label
+				End If
+			end if
+	        
+	        PRFLOOP[cat].AEflag_QE29 = {_False}
+	        
+	        If ContainsAny(MRK_QCountry,{France}) then 
+	        	'Marking AE Flag
+	        	if containsany(PRFLOOP[cat].Prog_QE23,{Durvalum1}) Then
+	        		if containsany (PRFLOOP[cat].BLK6.QE29,{Yessurge,Yesablat,YesTACET,YesTAREY}) Then
+	        			PRFLOOP[cat].AEflag_QE29 = {_True}
+	        		
+	        			If Cat = {P1} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_BLK6_QE29}				
+							AE_FLAG_DETAILS.Label.Inserts["INS6"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_BLK6_QE29}].Label				
+						End If			
+						If Cat = {P2} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_BLK6_QE29}				
+							AE_FLAG_DETAILS.Label.Inserts["INS7"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_BLK6_QE29}].Label	
+						End If
+						If Cat = {P3} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_BLK6_QE29}				
+							AE_FLAG_DETAILS.Label.Inserts["INS8"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_BLK6_QE29}].Label
+						End If
+						If Cat = {P4} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_BLK6_QE29}				
+							AE_FLAG_DETAILS.Label.Inserts["INS9"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_BLK6_QE29}].Label
+						End If
+		                If Cat = {P5} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_BLK6_QE29}				
+							AE_FLAG_DETAILS.Label.Inserts["INS10"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_BLK6_QE29}].Label
+						End If								
+	        		end if
+	        	end if    
+	        	
+	        	If IOM.Info.IsDebug Or IOM.Info.IsTest Then PRFLOOP[cat].AEflag_QE29.Show()
+	        end if
+	                
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        PRFLOOP[cat].Ins_TxtBLK7 = MRK_QCountry.Response
+	        
+	        ShowQuestionNo(IOM,"E30,E31")
+	        
+	        If ContainsAny(MRK_QCountry,{Germany}) then 
+	        	PRFLOOP[cat].BLK7.QuestionFilter = "QE30"
+	        Else
+	        	PRFLOOP[cat].BLK7.QuestionFilter = "QE30,QE31"
+	        End If
+	        
+	        PRFLOOP[cat].BLK7.QuestionTemplate = "Block.htm"
+	        PRFLOOP[cat].BLK7.QE30.Categories = PRFLOOP[cat].BLK7.QE30.Categories - {Intentto,Intentto1,Intentto2,Intentto3}
+	        if ContainsAny(PRFLOOP[cat].BLK2.QE6,{LocallyA}) then PRFLOOP[cat].BLK7.QE30.Categories = PRFLOOP[cat].BLK7.QE30.Categories + {Intentto,Intentto1,Intentto2,Intentto3}
+	        
+	        if ContainsAny(MRK_QCountry,{France,UK}) then
+	        	PRFLOOP[cat].TextQE31 = {_2}
+	        else
+	        	PRFLOOP[cat].TextQE31 = {_1}
+	        end if
+	        
+	        if ContainsAny(MRK_QCountry,{France}) then        	
+	        	PRFLOOP[cat].BLK7.QE31.Categories.Filter = {} + {Complete,Partialr,Stabledi,Progress,Hyperpro,Unknownu}
+	        Else
+	        	PRFLOOP[cat].BLK7.QE31.Categories.Filter = {} + {Complete,Partialr,Stabledi,Progress,Unknownu}
+	        End If        
+	        
+	        PRFLOOP[cat].BLK7.Ask()
+	
+			If ContainsAny(MRK_QCountry,{France}) then 
+				if containsany(PRFLOOP[cat].Prog_QE23,{Durvalum1}) Then
+		            if containsany (PRFLOOP[cat].BLK7.QE31,{Hyperpro}) Then
+		                PRFLOOP[cat].Prog_QE31 = PRFLOOP[cat].Prog_QE31 + {_2}
+		                ''Mrk_AE_Flag = {FLAGTRUE}
+		                
+		                'Marking AE Flag
+		                If Cat = {P1} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS11"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_BLK7_QE31}].Label				
+						End If			
+						If Cat = {P2} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS12"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_BLK7_QE31}].Label	
+						End If
+						If Cat = {P3} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS13"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_BLK7_QE31}].Label
+						End If
+						If Cat = {P4} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS14"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_BLK7_QE31}].Label
+						End If
+		                If Cat = {P5} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS15"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_BLK7_QE31}].Label
+						End If				
+		            end if
+		        End if
+		        
+		 	else
+		        
+		        if containsany(PRFLOOP[cat].Prog_QE23,{Durvalum,Durvalum1}) Then
+		            if containsany (PRFLOOP[cat].BLK7.QE31,{Progress}) Then
+		                PRFLOOP[cat].Prog_QE31 = {_1}
+		                ''Mrk_AE_Flag = {FLAGTRUE}
+		                
+		                'Marking AE Flag
+		                If Cat = {P1} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS11"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_BLK7_QE31}].Label				
+						End If			
+						If Cat = {P2} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS12"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_BLK7_QE31}].Label	
+						End If
+						If Cat = {P3} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS13"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_BLK7_QE31}].Label
+						End If
+						If Cat = {P4} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS14"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_BLK7_QE31}].Label
+						End If
+		                If Cat = {P5} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_BLK7_QE31}				
+							AE_FLAG_DETAILS.Label.Inserts["INS15"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_BLK7_QE31}].Label
+						End If				
+		            end if
+		        End if
+		    end if
+	        
+	        If IOM.Info.IsDebug Or IOM.Info.IsTest Then PRFLOOP[cat].Prog_QE31.Show()
+	
+	        ''---------------------------------------------------------------
+	        ''---------------------------------------------------------------
+	        
+	        If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+	        	ShowQuestionNo(IOM,"E32")
+	        	PRFLOOP[cat].QE32.Ask()
+	        	
+	        	if ContainsAny(MRK_QCountry,{Germany}) then 
+	        		PRFLOOP[cat].QE33.Categories.Filter = {} + {Atezoliz,Durvalum,Nivoluma,Lenvatin,Sorafeni,Durvalum1,Chemothe,OtherPDL,Otherspe}
+	        	Elseif ContainsAny(MRK_QCountry,{UK}) then
+	        		PRFLOOP[cat].QE33.Categories.Filter = {} + {Atezoliz,Durvalum1,Lenvatin,Sorafeni,Chemothe,OtherPDL,Otherspe}
+	        	Else
+	        		PRFLOOP[cat].QE33.Categories.Filter = {} + {Atezoliz,Durvalum1,Nivoluma,Lenvatin,Sorafeni,Chemothe,OtherPDL,Otherspe}
+	        	End If
+	        	
+	        	ShowQuestionNo(IOM,"QE33")
+	        	PRFLOOP[cat].QE33.Ask()
+	        End If
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	        
+	        Dim CountQ34
+	        CountQ34 = 0
+	        
+	        ShowQuestionNo(IOM,"QE34")
+	        PRFLOOP[cat].QE34.Categories[{TACEampD}].OtherQuestion.Style.Width = "3em"
+	        PRFLOOP[cat].QE34.Categories[{TAEofcyc}].OtherQuestion.Style.Width = "3em"
+	        PRFLOOP[cat].QE34.Categories[{TAREofcy}].OtherQuestion.Style.Width = "3em"
+	        ReaskQE34:
+	        PRFLOOP[cat].QE34.Ask()        
+	        
+	        if ContainsAny(MRK_QCountry,{Spain}) then
+	        	If CountQ34 = 0 Then
+			        if ContainsAny(PRFLOOP[cat].QE34,{None}) and Containsany(PRFLOOP[cat].BLK2.QE8,{Progress}) then  
+			        	CountQ34 = CountQ34 + 1
+			            PRFLOOP[cat].QE34.Errors.AddNew("ERR48",IOM.Questions["hCustomMsgs"].Categories.ERR48.Label)
+			            Goto ReaskQE34
+			        end if
+			    End If
+	        else
+		        If CountQ34 = 0 Then
+			        if ContainsAny(PRFLOOP[cat].QE34,{None}) and Containsany(PRFLOOP[cat].BLK2.QE8,{Progress}) then  
+			        	CountQ34 = CountQ34 + 1
+			            PRFLOOP[cat].QE34.Errors.AddNew("ER42",IOM.Questions["hCustomMsgs"].Categories.ERR42.Label)
+			            Goto ReaskQE34
+			        end if
+			    End If
+			end if
+	
+			If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+		        if ContainsAny(PRFLOOP[cat].QE34,{Systemic}) then
+		            if ContainsAny(MRK_QCountry,{Germany,Japan}) then PRFLOOP[cat].QE35.Categories.Filter = {} + {Atezoliz,Durvalum,Lenvatin,Sorafeni,Durvalum1,Chemothe,Others1}
+		            if ContainsAny(MRK_QCountry,{China}) then PRFLOOP[cat].QE35.Categories.Filter = {} + {Atezoliz,Lenvatin,Sorafeni,Chemothe,Others1}
+		            if ContainsAny(MRK_QCountry,{France,Italy,Spain,UK}) then PRFLOOP[cat].QE35.Categories.Filter = {} + {Atezoliz,Durvalum1,Lenvatin,Sorafeni,Chemothe,Others1}
+		            ShowQuestionNo(IOM,"QE35")
+		            PRFLOOP[cat].QE35.Ask()
+		        end if
+		    End If
+	
+	        if ContainsAny(PRFLOOP[cat].QE34,{Resectio,Transpla,Ablation,TACEampD,TAEofcyc,TAREofcy,Radiothe}) then
+	             PRFLOOP[cat].Prog_QE36 = PRFLOOP[cat].QE34
+	        end if
+	
+	        if ContainsAny(PRFLOOP[cat].QE34,{Systemic}) then
+	             PRFLOOP[cat].Prog_QE36 = PRFLOOP[cat].Prog_QE36 + PRFLOOP[cat].QE35
+	        end if
+	
+	        ''---------------------------------------------------------------
+	        ''---------------------------------------------------------------
+	        If cat = {P1} Or cat = {P2} Or cat = {P3} Then
+		        if Answercount(PRFLOOP[cat].Prog_QE36) > 0 then
+		            ShowQuestionNo(IOM,"QE36")
+		            PRFLOOP[cat].GRID_QE36.Categories = {} + PRFLOOP[cat].Prog_QE36
+		            if PRFLOOP[cat].GRID_QE36.Categories.Count > 1 then
+		                PRFLOOP[cat].GRID_QE36[..].QE36.Validation.MaxValue = Answercount(PRFLOOP[cat].Prog_QE36)
+		                PRFLOOP[cat].GRID_QE36.Ask()
+		            end if
+		        end if
+		    End If
+	
+	        ''---------------------------------------------------------------        
+	        
+	        If cat = {P4} Or cat = {P5} Then
+	        	if not ContainsAny(MRK_QCountry,{UK}) then 
+			        ShowQuestionNo(IOM,"QE37")       
+			        PRFLOOP[cat].QE37.Ask()
+			    end if
+		    
+		    	if containsany(PRFLOOP[cat].Prog_QE23,{Durvalum,Durvalum1}) Then
+		            if containsany (PRFLOOP[cat].QE37,{Evidence,Evidence1,Insuffici,Unmanagea,Patientco}) Then
+		                PRFLOOP[cat].Prog_QE37 = {_1}
+		                'Mrk_AE_Flag = {FLAGTRUE}
+		                
+		                'Marking AE Flag
+		                If Cat = {P1} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_QE37}				
+							AE_FLAG_DETAILS.Label.Inserts["INS16"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_QE37}].Label	
+						End If
+						If Cat = {P2} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_QE37}				
+							AE_FLAG_DETAILS.Label.Inserts["INS17"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_QE37}].Label	
+						End If
+						If Cat = {P3} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_QE37}				
+							AE_FLAG_DETAILS.Label.Inserts["INS18"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_QE37}].Label	
+						End If
+						If Cat = {P4} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_QE37}				
+							AE_FLAG_DETAILS.Label.Inserts["INS19"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_QE37}].Label
+						End If
+		                If Cat = {P5} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_QE37}				
+							AE_FLAG_DETAILS.Label.Inserts["INS20"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_QE37}].Label	
+						End If
+		                	                
+		            end if
+	        	End if
+		    
+		    	If IOM.Info.IsDebug Or IOM.Info.IsTest Then PRFLOOP[cat].Prog_QE37.Show()
+		    '----------------------------------------------------------------   
+		    
+	'	    	if not ContainsAny(MRK_QCountry,{Spain}) then
+					PRFLOOP[cat].Ins_TxtQE38 = MRK_QCountry.Response
+					
+				    IOM.Banners.AddNew("BLK8" , "<script type = ""text/javascript"" src= ""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250789390101/Block8.js""></script>")
+			        ShowQuestionNo(IOM,"E38,E39,E40")        
+			        if ContainsAny(MRK_QCountry,{Italy,Spain}) then 
+			        	PRFLOOP[cat].BLK8.QE38.Categories.Filter = {} + {Atezoliz,Durvalum1,Nivoluma,Lenvatin,Sorafeni,Regorafe,Ramuciru,Cabozant,Chemothe,Otherspe}
+			        Elseif ContainsAny(MRK_QCountry,{UK}) then 
+			        	PRFLOOP[cat].BLK8.QE38.Categories.Filter = {} + {Atezoliz,Durvalum1,Lenvatin,Sorafeni,Regorafe,Ramuciru,Cabozant,Chemothe,Otherspe}
+			        ElseIf ContainsAny(MRK_QCountry,{France}) then
+			        	PRFLOOP[cat].BLK8.QE38.Categories.Filter = {} + {Atezoliz,Nivoluma,Lenvatin,Sorafeni,Regorafe,Ramuciru,Cabozant,Chemothe,Otherspe}
+			        Else
+			        	PRFLOOP[cat].BLK8.QE38.Categories.Filter = {} + {Atezoliz,Durvalum1,Nivoluma,Lenvatin,Sorafeni,Durvalum,Regorafe,Ramuciru,Cabozant,Chemothe,Otherspe}
+			        End If        
+			        
+			        PRFLOOP[cat].BLK8.QE39.Categories[{Weeks}].OtherQuestion.Style.Width = "3em"
+			        PRFLOOP[cat].BLK8.QE39.Categories[{Months}].OtherQuestion.Style.Width = "3em"
+			        PRFLOOP[cat].BLK8.QE39.Categories[{Weeks}].OtherQuestion.Validation.MaxValue = 24
+			        PRFLOOP[cat].BLK8.QE39.Categories[{Months}].OtherQuestion.Validation.MaxValue = 6
+			        PRFLOOP[cat].BLK8.QuestionTemplate = "Block.htm"
+			        PRFLOOP[cat].BLK8.QE40.MustAnswer = false
+			        PRFLOOP[cat].BLK8.Validation.Function = "VALBLK8"
+			        PRFLOOP[cat].BLK8.QuestionFilter = "QE38,QE39,QE40"
+			        PRFLOOP[cat].BLK8.Ask()
+			        IOM.Banners.Remove("BLK8")	    
+				    		    
+				    If Containsany(PRFLOOP[cat].BLK8.QE38,{Durvalum1,Durvalum}) Then
+				    	PRFLOOP[cat].AEflag_QE38 = {_1}
+			            ''Mrk_AE_Flag = {FLAGTRUE}
+			            
+			            'Marking AE Flag
+		                If Cat = {P1} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P1_BLK8_QE38}				
+							AE_FLAG_DETAILS.Label.Inserts["INS21"] = Mrk_AE_Questions.Categories[{PRFLOOP_P1_BLK8_QE38}].Label	
+						End If
+						If Cat = {P2} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P2_BLK8_QE38}				
+							AE_FLAG_DETAILS.Label.Inserts["INS22"] = Mrk_AE_Questions.Categories[{PRFLOOP_P2_BLK8_QE38}].Label	
+						End If
+						If Cat = {P3} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P3_BLK8_QE38}				
+							AE_FLAG_DETAILS.Label.Inserts["INS23"] = Mrk_AE_Questions.Categories[{PRFLOOP_P3_BLK8_QE38}].Label	
+						End If
+						If Cat = {P4} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P4_BLK8_QE38}				
+							AE_FLAG_DETAILS.Label.Inserts["INS24"] = Mrk_AE_Questions.Categories[{PRFLOOP_P4_BLK8_QE38}].Label	
+						End If
+		                If Cat = {P5} Then
+							Mrk_AE_Questions = Mrk_AE_Questions + {PRFLOOP_P5_BLK8_QE38}				
+							AE_FLAG_DETAILS.Label.Inserts["INS25"] = Mrk_AE_Questions.Categories[{PRFLOOP_P5_BLK8_QE38}].Label	
+						End If		            
+				    End If
+				    
+				    If IOM.Info.IsDebug Or IOM.Info.IsTest Then 
+				    	PRFLOOP[cat].AEflag_QE38.Show()		    	
+				    End If
+				    		    
+				    '----------------------------------------------------------------
+				    
+				    PRFLOOP[cat].Prog_QE38.Response = PRFLOOP[cat].BLK8.QE38.Response
+				    
+				    If Containsany(PRFLOOP[cat].BLK8.QE38,{Durvalum1}) And Containsany(PRFLOOP[cat].BLK6.QE23,{Atezoliz}) Then 
+					    ShowQuestionNo(IOM,"E41")
+				        PRFLOOP[cat].QE41.Ask()
+				    End If
+	'	    	end if
+		    End If
+		    '----------------------------------------------------------------   
+		    
+		    '----------------------------------------------------------------	    
+	        
+	        ''---------------------------------------------------------------
+	        pcntr = pcntr + 1
+	
+	        PRF_CNT = pcntr
+	
+	        PRF_Completed[cat].slice =  PRF_Completed[cat].slice + 1
+	
+	        ''---------------------------------------------------------------
+	
+	        ''---------------------------------------------------------------
+	'        if ContainsAny(MRK_QCountry,{Spain}) then
+	'        	if not ContainsAny(M3PRF,{M3PRF}) then
+	'		        if cat = {P3} then
+	'		            ShowQuestionNo(IOM,"Q05SP")
+	'		            Q05SP.Ask()
+	'		        end if
+	'		
+	'		        if ContainsAny(Q05SP,{NoIdontw}) then exit for
+	'		        if ContainsAny(Q05SP,{YesIwoul}) and cat = {P4} then exit for
+	'		   	end if	        
+	'	   	else	   		
+	'	   		if not ContainsAny(M3PRF,{M3PRF}) then
+	'		   		if cat = {P3} then
+	'		            ShowQuestionNo(IOM,"Q05")
+	'		            Q05.Ask()
+	'		        end if
+	'		
+	'		        if ContainsAny(Q05,{NoIdontw}) then exit for
+	'		        if ContainsAny(Q05,{YesIwoul}) and cat = {P4} then exit for
+	'		  	end if
+	'	   	end if
+	        ''---------------------------------------------------------------
+	
+	''---------------------------------------------------------------
+	
+	NEXT
+	
+	
+	If IOM.Info.IsDebug Or IOM.Info.IsTest Then
+		'AE_FLAG_DETAILS.Show()
+	End If	    
+	
+	if PRF_CNT = 3 then QuotaPRF = {} + {_3}
+	if PRF_CNT = 4 then QuotaPRF = {} + {_4}
+	if PRF_CNT = 5 then QuotaPRF = {} + {_5}
+	ShowTest(IOM,QuotaPRF,"")
+	
+	If TRIM(UCASE(SampleFields.IDTYPE.Response)) = "TEST" Then
+	     'Ignore Quota pending for Ids which are TEST
+	Else
+	     PendQuota(IOM, "QuotaPRF", "Quota_Country,QuotaPRF")
+	End If
+end if
+
+'==========================================
+Function VALBLK0(BLK0, IOM, Attempt)
+
+        dim CurrMN,Past3MN,year_now,MRK_QCountry
+
+        set CurrMN = IOM.Questions["CurrMN"]
+        set Past3MN = IOM.Questions["Past3MN"]
+        set year_now = IOM.Questions["year_now"]
+        set MRK_QCountry = IOM.Questions["MRK_QCountry"]
+
+''      if (BLK0.Q01 < 18) then
+''              BLK0.Q01.Errors.Clear()
+''              BLK0.Q01.Errors.AddNew("ERR28",IOM.Questions["hCustomMsgs"].Categories.ERR28.Label)
+''              VALBLK0 = false
+''              exit function
+''      end if
+
+        if ContainsAny(BLK0.Q01,{Below18}) then
+                BLK0.Q01.Errors.Clear()
+                BLK0.Q01.Errors.AddNew("ERR28",IOM.Questions["hCustomMsgs"].Categories.ERR28.Label)
+                VALBLK0 = false
+                exit function
+        end if
+
+        if NOT ContainsAny(BLK0.Q02,{Unresect1}) then
+                BLK0.Q02.Errors.Clear()
+                BLK0.Q02.Errors.AddNew("ERR29",IOM.Questions["hCustomMsgs"].Categories.ERR29.Label)
+                VALBLK0 = false
+                exit function
+        end if
+
+        if NOT ContainsAny(BLK0.Q03,{Firstlin}) then
+                BLK0.Q03.Errors.Clear()
+                BLK0.Q03.Errors.AddNew("ERR30",IOM.Questions["hCustomMsgs"].Categories.ERR30.Label)
+                VALBLK0 = false
+                exit function
+        end if
+        
+        if ContainsAny(BLK0.Q04,{Morethan}) then
+                BLK0.Q04.Errors.Clear()
+                BLK0.Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+                VALBLK0 = false
+                exit function
+        end if
+
+		If Not Containsany(MRK_QCountry,{France}) Then		
+''	        If Containsany(MRK_QCountry,{China}) Then
+''	                if (BLK0.GRID_Q04[{YYYY}].Q04 <> year_now) then
+''	                        if (BLK0.GRID_Q04[{MM}].Q04) < Past3MN then
+''	                                BLK0.GRID_Q04.Errors.Clear()
+''	                                BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+''	                                VALBLK0 = false
+''	                                exit function
+''	                        end if
+''	                end if
+''	        Else
+'	                if (BLK0.GRID_Q04[{YYYY}].Q04 <> year_now) then
+'	                        BLK0.GRID_Q04.Errors.Clear()
+'	                        BLK0.GRID_Q04.Errors.AddNew("ERR31",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'	                        VALBLK0 = false
+'	                        exit function
+'	                end if
+''	        End If
+'	
+''	        If Containsany(MRK_QCountry,{China}) Then
+''	                if (BLK0.GRID_Q04[{YYYY}].Q04 = year_now) then
+''	                        if ((BLK0.GRID_Q04[{MM}].Q04) > CurrMN) then
+''	                                BLK0.GRID_Q04.Errors.Clear()
+''	                                BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+''	                                VALBLK0 = false
+''	                                exit function
+''	                        end if
+''	                end if
+''	        Else
+'	                if (BLK0.GRID_Q04[{YYYY}].Q04 = year_now) then
+'	                        if ((BLK0.GRID_Q04[{MM}].Q04) > CurrMN) Or ((BLK0.GRID_Q04[{MM}].Q04) < Past3MN) then
+'	                                BLK0.GRID_Q04.Errors.Clear()
+'	                                BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'	                                VALBLK0 = false
+'	                                exit function
+'	                        end if
+'	                end if
+''	        End If
+			
+			If CurrMN > 3 Then
+				if (BLK0.GRID_Q04[{YYYY}].Q04 = year_now) then
+					if ((BLK0.GRID_Q04[{MM}].Q04) > CurrMN) Or ((BLK0.GRID_Q04[{MM}].Q04) < Past3MN) then
+	                    BLK0.GRID_Q04.Errors.Clear()
+	                    BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+	                    VALBLK0 = false
+	                    exit function
+	                end if
+				Else					
+                    BLK0.GRID_Q04.Errors.Clear()
+                    BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+                    VALBLK0 = false
+                    exit function	                
+				End If	
+			Else
+				If (BLK0.GRID_Q04[{YYYY}].Q04 <> year_now) then
+                    if (BLK0.GRID_Q04[{MM}].Q04) < Past3MN then
+                        BLK0.GRID_Q04.Errors.Clear()
+                        BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+                        VALBLK0 = false
+                        exit function
+                    end if
+                Else
+                    if ((BLK0.GRID_Q04[{MM}].Q04) > CurrMN) then
+                        BLK0.GRID_Q04.Errors.Clear()
+                        BLK0.GRID_Q04.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+                        VALBLK0 = false
+                        exit function
+                    end if                  
+	            End if			
+			End If
+	        
+	    End If
+
+End Function
+
+Function VALBLK1(BLK1, IOM, Attempt)
+
+        dim CurrMN,Past3MN,year_now,MRK_QCountry
+
+        set CurrMN = IOM.Questions["CurrMN"]
+        set Past3MN = IOM.Questions["Past3MN"]
+        set year_now = IOM.Questions["year_now"]
+        set MRK_QCountry = IOM.Questions["MRK_QCountry"]
+
+		If Containsany(MRK_QCountry,{Spain}) Then
+			If Containsany(BLK1.QE1,{Morethan3}) Then 
+				BLK1.QE1.Errors.Clear()
+				BLK1.QE1.Errors.AddNew("Err47",IOM.Questions["hCustomMsgs"].Categories.Err47.Label)
+				VALBLK1 = false
+				exit function		
+			End If
+		else
+			If Containsany(BLK1.QE1,{Morethan3}) Then 
+				BLK1.QE1.Errors.Clear()
+				BLK1.QE1.Errors.AddNew("ERR43",IOM.Questions["hCustomMsgs"].Categories.Err43.Label)
+				VALBLK1 = false
+				exit function		
+			End If
+		end if
+
+''      if (BLK1.GRID_QE1[{YYYY}].QE1 <> year_now) then
+''              BLK1.GRID_QE1.Errors.Clear()
+''              BLK1.GRID_QE1.Errors.AddNew("ERR31",IOM.Questions["hCustomMsgs"].Categories.ERR31.Label)
+''              VALBLK1 = false
+''              exit function
+''      end if
+
+'        If Containsany(MRK_QCountry,{China}) Then
+'                if (BLK1.GRID_QE1[{YYYY}].QE1 <> year_now) then
+'                        if (BLK1.GRID_QE1[{MM}].QE1) < Past3MN then
+'                                BLK1.GRID_QE1.Errors.Clear()
+'                                BLK1.GRID_QE1.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'                                VALBLK1 = false
+'                                exit function
+'                        end if
+'                end if
+'        Else
+'                if (BLK1.GRID_QE1[{YYYY}].QE1 <> year_now) then
+'                        ''if (BLK1.GRID_QE1[{MM}].QE1) < Past3MN then
+'                                BLK1.GRID_QE1.Errors.Clear()
+'                                BLK1.GRID_QE1.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'                                VALBLK1 = false
+'                                exit function
+'                        ''end if
+'                end if
+'        End If
+
+'        If Containsany(MRK_QCountry,{China}) Then
+'                if (BLK1.GRID_QE1[{YYYY}].QE1 = year_now) then
+'                        if ((BLK1.GRID_QE1[{MM}].QE1) > CurrMN) then
+'                                BLK1.GRID_QE1.Errors.Clear()
+'                                BLK1.GRID_QE1.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'                                VALBLK1 = false
+'                                exit function
+'                        end if
+'                end if
+'        Else
+'                if (BLK1.GRID_QE1[{YYYY}].QE1 = year_now) then
+'                        if ((BLK1.GRID_QE1[{MM}].QE1) > CurrMN) Or ((BLK1.GRID_QE1[{MM}].QE1) < Past3MN) then
+'                                BLK1.GRID_QE1.Errors.Clear()
+'                                BLK1.GRID_QE1.Errors.AddNew("ERR40",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label)
+'                                VALBLK1 = false
+'                                exit function
+'                        end if
+'                end if
+'        End If
+
+End Function
+
+Function VALBLK2(BLK2, IOM, Attempt)
+
+    if ContainsAny(BLK2.QE6,{Metastat}) then
+        if (isempty(BLK2.QE10)) AND (NOT ContainsAny(BLK2.QE10.Response.Coded,{Dontknow})) then
+            BLK2.QE10.Errors.Clear()
+            BLK2.QE10.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+            VALBLK2 = false
+            exit function
+        end if
+    end if
+
+    if ContainsAny(BLK2.QE6,{Metastat}) and (isempty(BLK2.QE11)) then
+        BLK2.QE11.Errors.Clear()
+        BLK2.QE11.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+        VALBLK2 = false
+        exit function
+    end if
+
+    if ContainsAny(BLK2.QE7,{BCLCStag,BCLCStag1}) then
+        BLK2.QE7.Errors.Clear()
+        BLK2.QE7.Errors.AddNew("ERR41",IOM.Questions["hCustomMsgs"].Categories.ERR41.Label)
+        VALBLK2 = false
+        exit function
+    end if
+
+    if ContainsAny(BLK2.QE12,{Portalve}) and (isempty(BLK2.QE13)) then
+        BLK2.QE13.Errors.Clear()
+        BLK2.QE13.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+        VALBLK2 = false
+        exit function
+    end if
+
+End Function
+
+Function VALBLK6(BLK6, IOM, Attempt)
+
+	if ContainsAny(BLK6.QE23,{Atezoliz,Durvalum,Durvalum1}) then
+		if (isempty(BLK6.QE24b)) AND (NOT ContainsAny(BLK6.QE24b.Response.Coded,{Dontknow})) then
+		    BLK6.QE24b.Errors.Clear()
+		    BLK6.QE24b.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+		    VALBLK6 = false
+		    exit function
+		end if
+	end if
+	
+	if ContainsAny(BLK6.QE23,{Atezoliz}) and (isempty(BLK6.QE25)) then
+	    BLK6.QE25.Errors.Clear()
+	    BLK6.QE25.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+	    VALBLK6 = false
+	    exit function
+	end if
+	
+	if ContainsAny(BLK6.QE23,{Atezoliz}) and (isempty(BLK6.QE25A)) then
+	    BLK6.QE25A.Errors.Clear()
+	    BLK6.QE25A.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+	    VALBLK6 = false
+	    exit function
+	end if
+	
+	if ContainsAny(BLK6.QE28,{No}) then
+	    BLK6.QE28.Errors.Clear()
+	    BLK6.QE28.Errors.AddNew("Err46",IOM.Questions["hCustomMsgs"].Categories.Err46.Label)
+	    VALBLK6 = false
+	    exit function
+	end if
+	
+	if ContainsAny(BLK6.QE23,{Atezoliz}) And Containsany(BLK6.QE27,{Patient1}) then
+	    if (isempty(BLK6.QE28)) then
+            BLK6.QE28.Errors.Clear()
+            BLK6.QE28.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+            VALBLK6 = false
+            exit function
+	    end if
+	end if
+
+	If Containsany(BLK6.QE26,{Patient1}) then
+		if ContainsAny(BLK6.QE23,{Atezoliz,Durvalum1,Durvalum,OtherPDL,Nivoluma}) Then
+			if (isempty(BLK6.QE26a)) then
+	            BLK6.QE26a.Errors.Clear()
+	            BLK6.QE26a.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+	            VALBLK6 = false
+	            exit function
+		    end if
+		    		    
+	    	if Containsany(BLK6.QE26a,{No}) then
+	            BLK6.QE26a.Errors.Clear()
+	            BLK6.QE26a.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.Err46.Label)
+	            VALBLK6 = false
+	            exit function
+		    end if		   
+		End If
+	End If
+
+'        if (NOT ContainsAny(BLK6.QE23,{Atezoliz})) and (isempty(BLK6.QE27)) then
+'                BLK6.QE27.Errors.Clear()
+'                BLK6.QE27.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'                VALBLK6 = false
+'                exit function
+'        end if
+
+'        if (NOT ContainsAny(BLK6.QE23,{Atezoliz,Durvalum,Durvalum1})) and (isempty(BLK6.QE26)) then
+'                BLK6.QE26.Errors.Clear()
+'                BLK6.QE26.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'                VALBLK6 = false
+'                exit function
+'        end if
+
+End Function
+
+Function VALBLK6a(BLK6, IOM, Attempt)
+
+    if ContainsAny(BLK6.QE23,{Atezoliz,Durvalum,Durvalum1}) then
+        if (isempty(BLK6.QE24b)) AND (NOT ContainsAny(BLK6.QE24b.Response.Coded,{Dontknow})) then
+            BLK6.QE24b.Errors.Clear()
+            BLK6.QE24b.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+            VALBLK6a = false
+            exit function
+        end if
+    end if       
+    
+    if ContainsAny(BLK6.QE28,{No}) then
+        BLK6.QE28.Errors.Clear()
+        BLK6.QE28.Errors.AddNew("Err46",IOM.Questions["hCustomMsgs"].Categories.Err46.Label)
+        VALBLK6a = false
+        exit function
+    end if
+
+	if ContainsAny(BLK6.QE23,{Atezoliz}) And Containsany(BLK6.QE27,{Patient1}) then
+        if (isempty(BLK6.QE28)) then
+            BLK6.QE28.Errors.Clear()
+            BLK6.QE28.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+            VALBLK6a = false
+            exit function
+        end if
+    end if
+
+'        if (NOT ContainsAny(BLK6.QE23,{Atezoliz})) and (isempty(BLK6.QE27)) then
+'                BLK6.QE27.Errors.Clear()
+'                BLK6.QE27.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'                VALBLK6a = false
+'                exit function
+'        end if
+        
+'        if (NOT ContainsAny(BLK6.QE23,{Atezoliz,Durvalum,Durvalum1})) and (isempty(BLK6.QE26)) then
+'                BLK6.QE26.Errors.Clear()
+'                BLK6.QE26.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'                VALBLK6a = false
+'                exit function
+'        end if
+
+End Function
+
+Function VALBLK5(BLK5, IOM, Attempt)
+
+        if ContainsAny(BLK5.QE22,{Hyperten}) and (isempty(BLK5.QE22)) then
+                BLK5.QE22.Errors.Clear()
+                BLK5.QE22.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+                VALBLK5 = false
+                exit function
+        end if
+
+End Function
+
+Function VALBLK8(BLK8, IOM, Attempt)
+
+    if ContainsAny(BLK8.QE38,{Atezoliz,Durvalum,Durvalum1}) then
+        if (isempty(BLK8.QE40)) AND (NOT ContainsAny(BLK8.QE40.Response.Coded,{Dontknow})) then
+            BLK8.QE40.Errors.Clear()
+            BLK8.QE40.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+            VALBLK8 = false
+            exit function
+        end if
+    end if       
+
+End Function
