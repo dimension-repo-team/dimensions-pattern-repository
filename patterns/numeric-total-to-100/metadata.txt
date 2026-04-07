@@ -1,0 +1,20 @@
+    Grid_QA8 "Finally, in this section, what proportion of the dogs that you {#INS_QA8} fall into the following weight categories?<p/>(Please provide an answer in each row. The total should sum to 100%)" loop
+    {
+        UpTo1kg "Dogs that weigh up to 1.27kg",
+        _1To2kg "Dogs weighing 1.27-2.5kg",
+        _2To5kg "Dogs weighing 2.6kg-5.0kg",
+        _5To10kg "Dogs weighing 5.1kg-10.0g",
+        _10To20kg "Dogs weighing 10.1kg-20.0kg",
+        _20To40kg "Dogs weighing 20.1kg-40.0kg",
+        _40To60kg "Dogs weighing 40.1kg-60.0kg",
+        Over60kg "Dogs weighing over 60.1kg"
+    } fields -
+    (
+        QA8 ""
+            style(
+                Width = "4em"
+            )
+        long [0 .. 100]
+        defaultanswer(0 );
+
+    ) expand grid;

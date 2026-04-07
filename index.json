@@ -118,5 +118,21 @@
     "projectId": "UK250349020102",
     "addedBy": "Clinton",
     "path": "patterns/tooltip-hover-text"
+  },
+  {
+    "id": "numeric-total-to-100",
+    "title": "Numeric Total to 100%",
+    "description": "Numeric Total to 100%, Show auto sum at bottom of column.",
+    "tags": [
+      "numeric",
+      "total",
+      "100",
+      "auto-sum"
+    ],
+    "questionType": "Numeric Grid",
+    "projectName": "25-101564-01-03 Bravecto IOL Line Extension VETS",
+    "projectId": "UK251015640103",
+    "addedBy": "Parveen Jindal",
+    "path": "patterns/numeric-total-to-100"
   }
 ]
