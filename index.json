@@ -134,5 +134,20 @@
     "projectId": "UK251015640103",
     "addedBy": "Parveen Jindal",
     "path": "patterns/numeric-total-to-100"
+  },
+  {
+    "id": "slider-5-scale-grid-with-na-dk",
+    "title": "Slider 5 scale - Grid with NA/DK",
+    "description": "Slider question for grid is a type of grid question where respondents indicate their answer along a continuous scale by dragging a slider for each statement instead of picking a fixed option",
+    "tags": [
+      "slider",
+      "5 scale",
+      "slider grid"
+    ],
+    "questionType": "Single select Grid with NA/DK",
+    "projectName": "25-034902-01 Alzheimer Opinions EMA region",
+    "projectId": "UK250349020102",
+    "addedBy": "Clinton",
+    "path": "patterns/slider-5-scale-grid-with-na-dk"
   }
 ]
