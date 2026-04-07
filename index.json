@@ -149,5 +149,31 @@
     "projectId": "UK250349020102",
     "addedBy": "Clinton",
     "path": "patterns/slider-5-scale-grid"
+    "id": "slider-5-scale-categorical",
+    "title": "Slider 5 scale - Categorical",
+    "description": "Slider question for categorical is a type of single select question where respondents indicate their answer along a continuous scale by dragging a slider instead of picking a fixed option",
+    "tags": [
+      "slider",
+      "categorical",
+      "5 scale"
+    ],
+    "questionType": "Single select categorical",
+    "projectName": "25-034902-01 Alzheimer Opinions EMA region",
+    "projectId": "UK250349020102",
+    "addedBy": "Clinton",
+    "path": "patterns/slider-5-scale-categorical"
+    "id": "slider-5-scale-categorical-with-na-dk",
+    "title": "Slider 5 scale - Categorical with NA/DK",
+    "description": "Slider question for categorical is a type of single select question where respondents indicate their answer along a continuous scale by dragging a slider instead of picking a fixed option",
+    "tags": [
+      "slider",
+      "5 scale",
+      "slider categorical"
+    ],
+    "questionType": "Single select categorical with NA/DK",
+    "projectName": "25-034902-01 Alzheimer Opinions EMA region",
+    "projectId": "UK250349020102",
+    "addedBy": "Clinton",
+    "path": "patterns/slider-5-scale-categorical-with-na-dk"
   }
 ]

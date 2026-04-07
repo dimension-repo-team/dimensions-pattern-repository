@@ -1,0 +1,9 @@
+QSSegment2 "If you wanted to determine a patients’ amyloid deposition, to what extent would you have the access and availability to use amyloid PET scanners and/or cerebral spinal fluid markers?<p/>(Please select one answer only)"
+    categorical [1..1]
+    {
+        _1 "1 – It would be impossible",
+        _2 "2 - It would be difficult",
+        _3 "3 – It might be possible",
+        _4 "4 - It would be easy",
+        _5 "5 – Extremely easily"
+    };
