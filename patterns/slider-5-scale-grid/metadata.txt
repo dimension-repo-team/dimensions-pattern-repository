@@ -1,0 +1,17 @@
+Grid_QSSegment1 "When it comes to your Early stage /Mild Alzheimer’s disease / Mild cognitive impairment indicating Alzheimer’s disease patients, to what extent do you agree or disagree with the following statements?<p/>(Please select one answer per statement)" loop
+    {
+        STATEMENTA "<i>I always provide a formal diagnosis as soon as I confirm my suspicions of MCI / AD, never opting to first undergo a watch and wait period</i>",
+        STATEMENTB "<i>I believe that amyloid targeting therapies have the potential to offer significant, clinically meaningful, benefits.</i>"
+    } fields -
+    (
+        QSSegment1 ""
+        categorical [1..1]
+        {
+            _1 "1 – Completely disagree",
+            _2 "2 - Disagree",
+            _3 "3 – Neither agree, nor disagree",
+            _4 "4 - Agree",
+            _5 "5 – Completely agree"
+        };
+
+    ) expand grid;
