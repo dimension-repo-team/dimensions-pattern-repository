@@ -1,0 +1,10 @@
+QA1 "Considering the pharmaceutical therapy options you <b>currently have available</b> for the treatment of your Alzheimer’s Disease patients, how satisfied or dissatisfied are you with these current options?<p/>(Please rate your satisfaction on the scale below where 1 = Extremely dissatisfied and 5= Extremely satisfied. You have the option to click ‘Don’t Know’ if you do not wish to respond to this question)"
+    categorical [1..1]
+    {
+        _1 "1 – Extremely dissatisfied",
+        _2 "2 - Dissatisfied",
+        _3 "3 – Neither satisfied, nor dissatisfied",
+        _4 "4 - Satisfied",
+        _5 "5 – Extremely satisfied",
+        Dontknow "DON’T KNOW"
+    };
