@@ -1,0 +1,33 @@
+GRID_QE1a "Thinking about all of the <b>COPD</b> patients that are currently treated with a triple therapy (ICS+LAMA+LABA), whether this be via Multiple Inhalers or a Single Inhaler, approximately <b>how long is the average COPD patient treated with dual therapy before stepping up to triple</b>?" loop
+    {
+        Days "Days",
+        Months "Months",
+        Years "Years"
+    } fields -
+    (
+        QE1a ""
+            style(
+                Width = "3em"
+            )
+        long [0 .. ]
+        codes(
+        {
+            _NA "" NA
+        } );
+
+    ) expand grid;
+
+GRID_QE1a_NA ""
+categorical
+{
+     _NA "Don’t know"
+};
+
+Page_GRID_QE1a ""
+    page(
+        GRID_QE1a,
+        GRID_QE1a_NA
+    );
+
+ERR36 "Either enter 'Days', 'Months', 'Years' or select 'Don’t know'.",
+ERR37 "Please enter value more than 0."
