@@ -1,0 +1,34 @@
+GRID_Q6 "<script type='text/javascript'>$(function()&#123;$('.mrEdit').after(' %');&#125;);</script>In this last section we would like you to focus on <b>asthma, and on patients on low dose ICS</b>.<p/>Thinking about just one of the products from the grid:<p/> And thinking specifically about asthma patients on low dose ICS, who are not already on a GLP-1 for any other reason. What proportion of patients in each of the groups below would you expect to prescribe or recommend this oral GLP-1 (Product X-1)?" loop
+    {
+        Normalweight "Normal weight<br/>(BMI 20-24.9)"
+        {
+            exacerbation1 "1 exacerbation in the past 12 months",
+            exacerbation2 "2 or more exacerbations in the past 12 months"
+        },
+        Overweight "Overweight<br/>(BMI 25-29.9)"
+        {
+            exacerbation3 "1 exacerbation in the past 12 months",
+            exacerbation4 "2 or more exacerbations in the past 12 months"
+        },
+        Obese "Obese<br/>(BMI 30+)"
+        {
+            exacerbation5 "1 exacerbation in the past 12 months",
+            exacerbation6 "2 or more exacerbations in the past 12 months"
+        }
+    } fields -
+    (
+        Q6_IN "" loop
+        {
+            Wouldpre "Would prescribe / recommend Product X-1",
+            Wouldnot "Would not prescribe / recommend Product X-1"
+        } fields -
+        (
+            Q6 ""
+                style(
+                    Width = "3em"
+                )
+            long [0 .. 100];
+
+        ) expand grid;
+
+    ) expand grid;
