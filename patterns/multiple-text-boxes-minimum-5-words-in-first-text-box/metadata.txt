@@ -1,0 +1,8 @@
+Grid_QA3a "Please take a few moments to think about <b>daratumumab</b> as a treatment for <b>front-line</b> multiple myeloma patients and tell us what recent, new developments come to mind when thinking of this treatment? What are you most excited about when it comes to using this treatment in front-line management? Please be as detailed as you can." loop [1..3] fields -
+    (
+        QA3 ""
+        text;
+        
+    ) expand grid;
+
+ERR28 "Please provide minimum 5 Words"

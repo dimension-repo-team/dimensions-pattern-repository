@@ -1,0 +1,26 @@
+ShowQuestionNo(IOM,"Grid_QA3")
+Grid_QA3a.MustAnswer = False
+Grid_QA3a.Validation.Function = "Val_QA3"
+Grid_QA3a.Ask()
+
+Function Val_QA3(Question, IOM, Attempt)
+
+        Dim Grid_QA3a,QA3
+        set Grid_QA3a = IOM.Questions["Grid_QA3a"]
+		
+		If (Not IsEmpty(Grid_QA3a[1].QA3.Response))  THEN
+		If WordCount(Grid_QA3a[1].QA3.Response,IOM) < 5   then 
+			Question.Errors.AddNew("Err1",IOM.Questions["hCustomMsgs"].Categories.ERR28.Label)
+			Val_QA3 = False
+			Exit function		
+		End if 		
+	End if 
+		
+        If (Isempty (Grid_QA3a[1].QA3.Response)) Then
+                Grid_QA3a.Errors.Clear()
+                Grid_QA3a.Errors.AddNew ("Err8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+                Val_QA3 = false
+            exit function
+        End If
+
+End Function
