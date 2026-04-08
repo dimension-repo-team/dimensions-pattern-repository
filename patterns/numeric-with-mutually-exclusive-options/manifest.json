@@ -1,0 +1,6 @@
+{
+  "id": "numeric-with-mutually-exclusive-options",
+  "title": "Numeric with Mutually Exclusive options",
+  "description": "Numeric with Mutually Exclusive options. Upon entering value in numeric box, selection of exclusive options is automatically removed. Upon selecting exclusive options numeric box clears out.",
+  "hasPreview": true
+}
