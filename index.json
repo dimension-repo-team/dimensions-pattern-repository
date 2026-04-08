@@ -169,7 +169,20 @@
     "path": "patterns/carousel"
   },
   {
-<<<<<<< repo/single-select-grid-with-mutually-exclusive-option-1775636327661
+    "id": "numeric-with-mutually-exclusive-options",
+    "title": "Numeric with Mutually Exclusive options",
+    "description": "Numeric with Mutually Exclusive options. Upon entering value in numeric box, selection of exclusive options is automatically removed. Upon selecting exclusive options numeric box clears out.",
+    "tags": [
+      "numeric with mutually exclusive",
+      "mutually exclusive"
+    ],
+    "questionType": "Numeric with codes",
+    "projectName": "25-079327-01 Nucala COPD Trelegy W1",
+    "projectId": "UK2507932701",
+    "addedBy": "Vaibhav",
+    "path": "patterns/numeric-with-mutually-exclusive-options"
+  },
+  {
     "id": "single-select-grid-with-mutually-exclusive-option",
     "title": "Single Select Grid with Mutually Exclusive option",
     "description": "Single Select Grid with Mutually Exclusive option outside the grid.\nIf exclusive option is selected, grid answers for all categories is removed. And if grid is answered then automatically excusive selection is unchecked.",
@@ -182,7 +195,8 @@
     "projectId": "UK2507932701",
     "addedBy": "Vaibhav",
     "path": "patterns/single-select-grid-with-mutually-exclusive-option"
-=======
+  },
+  {
     "id": "days-months-year-with-dk",
     "title": "Days, Months, Year with DK",
     "description": "Days, Months, Year with DK",
@@ -196,6 +210,5 @@
     "projectId": "UK2507932701",
     "addedBy": "Vaibhav",
     "path": "patterns/days-months-year-with-dk"
->>>>>>> main
   }
 ]
