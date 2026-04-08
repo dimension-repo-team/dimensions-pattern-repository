@@ -1,0 +1,6 @@
+{
+  "id": "single-select-grid-with-mutually-exclusive-option",
+  "title": "Single Select Grid with Mutually Exclusive option",
+  "description": "Single Select Grid with Mutually Exclusive option outside the grid.\nIf exclusive option is selected, grid answers for all categories is removed. And if grid is answered then automatically excusive selection is unchecked.",
+  "hasPreview": true
+}
