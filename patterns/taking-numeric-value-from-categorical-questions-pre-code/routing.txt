@@ -1,0 +1,1 @@
+MRK_ProdX_QD3.Response = QD3.Response.Factor()
