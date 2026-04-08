@@ -1,0 +1,14 @@
+DUM_QG1.Categories.Order = OrderConstants.oRandomize
+DUM_QG1 = DUM_QG1.Categories[0]
+ShowTest(IOM,DUM_QG1,"")
+
+if ContainsAny(DUM_QG1,{_1}) then
+	GRID_QG1[0].QG1.Categories = {_7,_6,_5,_4,_3,_2,_1}
+	GRID_QG1[0].QG1.Categories.Order = OrderConstants.oCustom
+else
+	GRID_QG1[0].QG1.Categories = {_1,_2,_3,_4,_5,_6,_7}
+	GRID_QG1[0].QG1.Categories.Order = OrderConstants.oCustom
+end if
+
+ShowQuestionNo(IOM,"QG1")
+GRID_QG1.Ask()

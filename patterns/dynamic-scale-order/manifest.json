@@ -1,0 +1,6 @@
+{
+  "id": "dynamic-scale-order",
+  "title": "Dynamic Scale Order",
+  "description": "In the first run scale order will be 1-7 and in the next run order will be 7-1.",
+  "hasPreview": true
+}
