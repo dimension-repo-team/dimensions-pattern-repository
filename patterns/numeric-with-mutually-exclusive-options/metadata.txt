@@ -1,0 +1,10 @@
+QB4 "<script type='text/javascript'>$(function()&#123;$('.mrEdit').after(' <b>moderate exacerbation(s)</b> within a 12-month period for me to regard a COPD patient receiving triple therapy as suitable for treatment with a biologic ');&#125;);</script>Please think of your <b>COPD patients currently receiving triple therapy</b>.<p/>How many <b><u>moderate</u> exacerbations</b> would a <b>COPD patient receiving triple therapy</b> need to experience within a 12-month period for you to regard them as suitable for treatment with a biologic?<p/><i>By ‘moderate exacerbations’, we are referring to an acute worsening of respiratory symptoms that requires treatment with systemic corticosteroids and/or antibiotics, however does not require hospitalisation.</i><p/>(Please enter a whole number below)"
+        style(
+            Width = "3em"
+        )
+    long [1 .. 99]
+    codes(
+    {
+        Iwouldno "I would not regard COPD patients receiving triple therapy and experiencing moderate exacerbations as suitable for treatment with a biologic" fix exclusive,
+        Idontkno "I don’t know" fix exclusive
+    } );
