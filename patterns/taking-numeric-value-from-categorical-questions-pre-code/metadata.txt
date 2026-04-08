@@ -1,0 +1,18 @@
+QD3 "Assuming {@} is available and reimbursed, how <b>likely would you be to prescribe or recommend it to your COPD patients</b>?<p/>If you would like to review the product profile again, please click {#\.MRK_ProductLink}<p/>(Please select one answer only)"
+categorical [1..1]
+{
+     _0 "0 = Not at all likely" factor(0),
+     _1 "1" factor(1),
+     _2 "2" factor(2),
+     _3 "3" factor(3),
+     _4 "4" factor(4),
+     _5 "5" factor(5),
+     _6 "6" factor(6),
+     _7 "7" factor(7),
+     _8 "8" factor(8),
+     _9 "9" factor(9),
+     _10 "10 = Extremely likely" factor(10)
+};
+
+MRK_ProdX_QD3 "Holds Numeric value entered at QD3 for prodX"
+long;
