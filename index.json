@@ -179,7 +179,7 @@
     "questionType": "Numeric with codes",
     "projectName": "25-079327-01 Nucala COPD Trelegy W1",
     "projectId": "UK2507932701",
-    "addedBy": "Vaibhav",
+    "addedBy": "Vaibhav Bharambe",
     "path": "patterns/numeric-with-mutually-exclusive-options"
   },
   {
@@ -193,7 +193,7 @@
     "questionType": "Single Select Grid with Mutually Exclusive",
     "projectName": "25-079327-01 Nucala COPD Trelegy W1",
     "projectId": "UK2507932701",
-    "addedBy": "Vaibhav",
+    "addedBy": "Vaibhav Bharambe",
     "path": "patterns/single-select-grid-with-mutually-exclusive-option"
   },
   {
@@ -208,7 +208,7 @@
     "questionType": "Numeric grid with DK",
     "projectName": "25-079327-01 Nucala COPD Trelegy W1",
     "projectId": "UK2507932701",
-    "addedBy": "Vaibhav",
+    "addedBy": "Vaibhav Bharambe",
     "path": "patterns/days-months-year-with-dk"
   },
   {
