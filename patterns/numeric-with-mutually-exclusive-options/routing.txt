@@ -1,0 +1,2 @@
+QB4.Banners.AddNew("QB4Script","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK2507932701/QB4Script.js""></script>")
+QB4.Ask()
