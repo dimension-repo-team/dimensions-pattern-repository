@@ -1,0 +1,42 @@
+ShowQuestionNo(IOM,"E1a")
+GRID_QE1a[{Days}].QE1a.Validation.MaxValue = 31
+GRID_QE1a[{Months}].QE1a.Validation.MaxValue = 12
+GRID_QE1a[{Years}].QE1a.Validation.MaxValue = 10
+GRID_QE1a[..].QE1a.MustAnswer = False
+Page_GRID_QE1a.Validation.Function = "FnCheckE1a"
+Page_GRID_QE1a.Ask()
+
+Function FnCheckE1a(Question,IOM,Attempt)
+
+	 
+     Dim GRID_QE1a, GRID_QE1a_NA
+     Set GRID_QE1a_NA = IOM.Questions["GRID_QE1a_NA"]
+     Set GRID_QE1a = IOM.Questions["GRID_QE1a"]
+     
+     dim iter, Tot, counter
+     Tot = 0
+     counter = 0
+     For each iter in GRID_QE1a.Categories
+       Tot = Tot + GRID_QE1a[iter].QE1a.Response
+       If Not IsEmpty(GRID_QE1a[iter].QE1a.Response) then counter = counter + 1
+     Next
+     
+    If ((Tot = 0 ) And counter = 1) or ((Tot = 0 ) And counter = 2) or ((Tot = 0 ) And counter = 3) Then
+   		GRID_QE1a.Errors.AddNew("Error3", IOM.Questions["hCustomMsgs"].Categories.ERR37.Label)
+        FnCheckE1a = False
+        Exit Function
+    End If
+     
+     If (Tot = 0 ) And AnswerCount(IOM.Questions["GRID_QE1a_NA"]) = 0 Then
+        GRID_QE1a.Errors.AddNew("Error1", IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+        FnCheckE1a = False
+        Exit Function
+    End If
+    
+    If Tot > 0 And AnswerCount(IOM.Questions["GRID_QE1a_NA"]) > 0 Then
+        GRID_QE1a.Errors.AddNew("Error2", IOM.Questions["hCustomMsgs"].Categories.ERR36.Label)
+        FnCheckE1a = False
+        Exit Function
+    End If
+	 
+End Function

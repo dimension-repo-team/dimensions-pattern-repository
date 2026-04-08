@@ -1,0 +1,45 @@
+ShowQuestionNo(IOM,"GridQB7")
+dim iter2, iter3
+For each iter2 in GridQB7.Categories
+	If iter2.CategoryType = CategoryTypes.ctCategoryList then
+		for each iter3 in iter2.Categories
+	                 
+			GridQB7[iter3].QB7.Validation.MinValue = 0
+			GridQB7[iter3].QB7.MustAnswer = False
+
+		next
+	End if
+next
+	
+Page_QB7.Validation.Function="FnCheckQB7"
+GridQB7.Banners.AddNew("QC8Script","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK2507932701/QB7JSscript.js""></script>")
+Page_QB7.Ask()
+
+
+Function FnCheckQB7(Questions,IOM,Attempt)
+    Dim GridQB7,iter,iter1,Tot,LoopCount
+     
+     Set GridQB7 = IOM.Questions["GridQB7"]     
+    Tot=0
+    LoopCount = 0
+    
+    For each iter in GridQB7.Categories
+        If iter.CategoryType = CategoryTypes.ctCategoryList then
+             for each iter1 in iter.Categories
+                  Tot = Tot + AnswerCount(GridQB7[iter1].QB7.Response)
+                  LoopCount = LoopCount + 1
+             next
+        End if
+     next
+   
+     If Tot>0 and (AnswerCount(IOM.Questions["QB7DK"])>0) then
+           GridQB7.Errors.AddNew("ERR9", IOM.Questions.hCustomMsgs.Categories.ERR9.Label)
+           FnCheckQB7 = false
+     End If
+     
+
+	If Tot <> LoopCount and (AnswerCount(IOM.Questions["QB7DK"])=0) then
+           GridQB7.Errors.AddNew("ERR29", IOM.Questions.hCustomMsgs.Categories.ERR29.Label)
+           FnCheckQB7 = false
+     End If     
+End Function

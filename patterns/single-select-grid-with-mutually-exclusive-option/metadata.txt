@@ -1,0 +1,39 @@
+GridQB7 "Please now consider your <b>COPD patients receiving triple therapy</b> and with an <b>eosinophil count of <u>150-300</u> cells/µL</b>.  Would you prescribe or recommend a biologic to each of the following patient types?<p/>(Please select one answer per row)" loop
+    {
+        Patients ""
+        {
+            ModExacer "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/&amp;micro;L</b> and have experienced <b>1 moderate exacerbation</b> in the last 12 months",
+            ModExacer1 "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/µL</b> and have experienced <b>2 moderate exacerbations</b> in the last 12 months",
+            ModExacer2 "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/µL</b> and have experienced <b>3 or more moderate exacerbations</b> in the last 12 months"
+        },
+        Patientswho ""
+        {
+            SevExacer "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/µL</b> and have experienced <b>1 severe exacerbation</b> in the last 12 months",
+            SevExacer1 "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/µL</b> and have experienced <b>2 severe exacerbations</b> in the last 12 months",
+            SevExacer2 "Patients who are receiving <b>triple therapy</b>, have an eosinophil count of <b>150-300 cells/µL</b> and have experienced <b>3 or more severe exacerbations</b> in the last 12 months"
+        }
+    } rot fields -
+    (
+        QB7 ""
+        categorical [1..1]
+        {
+            Yes "Yes",
+            No "No",
+            Dont "Don’t know"
+        };
+
+    ) expand grid;
+
+QB7DK ""
+categorical
+{
+    Donotknow "I do not know the eosinophil count of my COPD patients" exclusive
+};
+
+Page_QB7 ""
+    page(
+        GridQB7,
+        QB7DK
+    );
+
+ERR29 "Please answer all impact areas or select “I do not know the eosinophil count of my COPD patients.” You have left one or more items unanswered."
