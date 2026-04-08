@@ -155,7 +155,7 @@
   {
     "id": "carousel",
     "title": "Carousel",
-    "description": "Carousel question is a type of question that allows respondents to evaluate multiple items—like brands, products, or concepts—using the same rating scale, but each item is presented one at a time in a rotating (“carousel”) format.",
+    "description": "Carousel question is a type of question that allows respondents to evaluate multiple itemsâlike brands, products, or conceptsâusing the same rating scale, but each item is presented one at a time in a rotating (âcarouselâ) format.",
     "tags": [
       "carousel",
       "scale",
@@ -167,5 +167,19 @@
     "projectId": "UK250349020102",
     "addedBy": "Clinton",
     "path": "patterns/carousel"
+  },
+  {
+    "id": "numeric-with-mutually-exclusive-options",
+    "title": "Numeric with Mutually Exclusive options",
+    "description": "Numeric with Mutually Exclusive options. Upon entering value in numeric box, selection of exclusive options is automatically removed. Upon selecting exclusive options numeric box clears out.",
+    "tags": [
+      "numeric with mutually exclusive",
+      "mutually exclusive"
+    ],
+    "questionType": "Numeric with codes",
+    "projectName": "25-079327-01 Nucala COPD Trelegy W1",
+    "projectId": "UK2507932701",
+    "addedBy": "Vaibhav",
+    "path": "patterns/numeric-with-mutually-exclusive-options"
   }
 ]
