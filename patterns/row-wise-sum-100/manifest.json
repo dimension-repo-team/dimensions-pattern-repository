@@ -1,0 +1,6 @@
+{
+  "id": "row-wise-sum-100",
+  "title": "Row wise sum 100",
+  "description": "Per row sum must equal 100.\nThis is a generic function which will work for multiple questions.",
+  "hasPreview": true
+}

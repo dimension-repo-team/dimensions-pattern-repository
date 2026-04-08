@@ -1,0 +1,23 @@
+ShowQuestionNo(IOM,"Q6")
+jsShowRunTotalRowsWise(IOM, GRID_Q6, {Total}, 2, MRK_Q6.Categories.Count, "False","","False","",1)
+GRID_Q6.Validation.Function= "FnGRID_RowTotal"
+GRID_Q6.Ask()
+
+Function FnGRID_RowTotal(Question, IOM, Attempt)
+
+    Dim Tot1, Cat1, Cat2
+   
+    For Each cat1 In Question    	
+    	Tot1 = 0
+    	For Each Cat2 in Cat1.Item[0]    		
+    		Tot1 = Tot1 + cat2.Item[0]
+		Next
+				
+		If Tot1 <> 100 Then
+	        Question.Errors.AddNew("ERR10",IOM.Questions["hCustomMsgs"].Categories.ERR10.Label)
+	        FnGRID_RowTotal = False
+	        Exit Function
+	    End If
+    Next    
+
+End Function
