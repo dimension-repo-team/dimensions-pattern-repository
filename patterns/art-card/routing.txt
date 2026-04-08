@@ -1,0 +1,8 @@
+IOM.banners.Remove("JSFile2")
+
+QD7.LayoutTemplate="FI131_Template.htm"
+ShowQuestionNo(IOM,"QD7")
+QD7.Ask()
+
+IOM.Banners.AddNew("JSFile2","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIDP/jquery.js""></script>")
+IOM.LayoutTemplate="SurveyTemplate_DA.htm"
