@@ -1,0 +1,6 @@
+{
+  "id": "rank-drag-and-drop",
+  "title": "Rank drag and drop",
+  "description": "This type of question allows the respondent to drag the statements and drop it in a box where it gets ranked accordingly. Number of ranks can vary from project to project.",
+  "hasPreview": true
+}

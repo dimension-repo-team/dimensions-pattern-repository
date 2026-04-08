@@ -1,0 +1,10 @@
+IOM.banners.Remove("JSFile2")
+
+ShowQuestionNo(IOM,"QE1")
+Grid_QE1.LayoutTemplate="FI030_Template.htm"
+Grid_QE1.MustAnswer = False
+Grid_QE1.Validation.Function = "Val_QE1"
+Grid_QE1.Ask()
+
+IOM.Banners.AddNew("JSFile2","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIDP/jquery.js""></script>")
+IOM.LayoutTemplate="SurveyTemplate_DA.htm"

@@ -1,0 +1,25 @@
+Grid_QE1 "To finish our survey today, we have just a couple more questions. <p/>Please consider everything you know about Alzheimer’s Disease. Which of the following do you feel would offer the <b>greatest opportunity</b> to improve patient outcomes within Alzheimer’s Disease?<p/>(Please drag the statements from the list into the box, placing them in order from that that represents the greatest opportunity, down to the statement that represents the lowest opportunity)" loop
+    {
+        Enhanced "Enhanced early detection and screening of Alzheimer’s Disease (i.e. MCI, early-stage Alzheimer’s Disease (ESAD)",
+        Streamli "Streamlined care pathways from primary to secondary care",
+        Availabi "Availability of blood biomarkers",
+        Rapidreg "Rapid regulatory approval of novel agents",
+        Optimisi "Optimising patient referrals from primary care",
+        Educatin "Educating primary care HCPs on the signs and symptoms of Alzheimer’s Disease",
+        Lessenin "Lessening the stigma associated to Alzheimer’s Disease",
+        Improvin "Improving support for carers / partners of Alzheimer’s disease patients",
+        Increase "Increased public awareness of Alzheimer’s disease pathology",
+        Increase1 "Increased public awareness of the risk factors associated to Alzheimer’s disease and preventative techniques"
+    } rot fields -
+    (
+        QE1 ""
+            style(
+                Width = "2em"
+            )
+        long [0 .. 10]
+        codes(
+        {
+            NoAns "No Answer" NA
+        } );
+
+    ) expand grid;
