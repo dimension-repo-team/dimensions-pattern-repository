@@ -1,0 +1,24 @@
+DUM_QG1 "This is for programming purpose to show order of scale of QG1"
+categorical [0..]
+{
+     _1 "Trelegy --> Trixeo",
+     _2 "Trixeo --> Trelegy"
+};
+
+GRID_QG1 "From your perspective, are there any <u>differences in <b>efficacy</b></u> between <b>Trelegy</b> Ellipta (fluticasone furoate/vilanterol/umeclidinium) and <b>Trixeo</b> Aerosphere (budesonide/glycopyrrolate/formoterol fumarate)?" 
+loop [0] fields -
+    (
+        QG1 ""
+        categorical [1..1]
+        {
+            _1 "<b>Trixeo</b> is much more effective",
+            _2 "",
+            _3 "",
+            _4 "No differences in efficacy",
+            _5 "",
+            _6 "",
+            _7 "<b>Trelegy</b> is much more effective"
+        };
+
+    ) expand grid;
+
