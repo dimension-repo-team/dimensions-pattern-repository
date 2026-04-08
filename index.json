@@ -155,7 +155,7 @@
   {
     "id": "carousel",
     "title": "Carousel",
-    "description": "Carousel question is a type of question that allows respondents to evaluate multiple itemsâlike brands, products, or conceptsâusing the same rating scale, but each item is presented one at a time in a rotating (âcarouselâ) format.",
+    "description": "Carousel question is a type of question that allows respondents to evaluate multiple itemsÃ¢ÂÂlike brands, products, or conceptsÃ¢ÂÂusing the same rating scale, but each item is presented one at a time in a rotating (Ã¢ÂÂcarouselÃ¢ÂÂ) format.",
     "tags": [
       "carousel",
       "scale",
@@ -210,5 +210,19 @@
     "projectId": "UK2507932701",
     "addedBy": "Vaibhav",
     "path": "patterns/days-months-year-with-dk"
+  },
+  {
+    "id": "art-card",
+    "title": "Art card",
+    "description": "Art card is a visual or illustrative stimulus used to explore perceptions, preferences, or ideas with consumers. It’s not “art” in the traditional sense—it’s a research tool designed to evoke responses, reactions, or discussions during qualitative studies like focus groups or interviews. \nArt card images may vary from project to project.",
+    "tags": [
+      "art card",
+      "images"
+    ],
+    "questionType": "Multi select categorical with images",
+    "projectName": "Assignment #158 - 25-034902-01 Alzheimer Opinions EMA region",
+    "projectId": "UK250349020102",
+    "addedBy": "Clinton",
+    "path": "patterns/art-card"
   }
 ]
