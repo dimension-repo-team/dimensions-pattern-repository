@@ -1,0 +1,48 @@
+IOM.Banners.Remove("JSFile2")
+
+ShowQuestionNo(IOM,"QI02")
+Page_I02.Validation.Function = "QI02"
+QI02.MustAnswer = False
+I02_Exclusive.MustAnswer = False
+QI02.Banners.AddNew("Qscript" , "<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250098660102/QI02.js""></script>")
+Page_I02.Ask()
+
+IOM.Banners.AddNew("JSFile2","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIDP/jquery.js""></script>")
+
+Function QI02(Question,IOM,Attempt)
+	Dim Quest1, Quest2
+	
+	set Quest1 = Question.Item[0]
+	set Quest2 = Question.Item[1]
+	
+	if AnswerCount(Quest1) = 0 AND AnswerCount(Quest2) = 0  then
+		Quest1.Errors.Clear()
+        Quest1.Errors.AddNew ("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+        QI02 = false
+        exit function
+	end if
+ 
+' 	if AnswerCount(Quest1) > 0 AND AnswerCount(Quest2) = 0  then
+'		Quest1.Errors.Clear()
+'        Quest1.Errors.AddNew ("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'        QI02 = false
+'        exit function
+'	end if
+' 	
+' 	if AnswerCount(Quest1) = 0 AND AnswerCount(Quest2) > 0  then
+'		Quest1.Errors.Clear()
+'        Quest1.Errors.AddNew ("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+'        QI02 = false
+'        exit function
+'	end if
+ 
+End Function
+
+if ContainsAny(QI02,{No}) then  
+	ShowQuestionNo(IOM,"QS99a")
+	QS99a.Show()           
+    MRK_QSCREEN = MRK_QSCREEN + {QI02}
+    If ContainsAny(QSCREEN, {SQUIT}) then QSCREEN.Response = {QI02}
+    ShowTest(IOM,MRK_QSCREEN,"")
+    GOTO TERMINATE
+end if
