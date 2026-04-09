@@ -1,0 +1,3 @@
+ShowQuestionNo(IOM,"Q09 ")
+GRID_Q09.Banners.AddNew("QHide","<script type='text/javascript'>$(function()&#123;$('td[id^=""Cell.2.""]').remove(); &#125;);</script>")
+GRID_Q09.Ask()
