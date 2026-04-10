@@ -336,5 +336,21 @@
     "projectId": "UK230654370102",
     "addedBy": "Clinton",
     "path": "patterns/open-ended-oe-text-box-question-with-minimum-word-validation"
+  },
+  {
+    "id": "open-ended-oe-text-box-question-with-minimum-character-validation",
+    "title": "Open-Ended (OE) text box question with minimum character validation",
+    "description": "OE text question with validation to accept minimum number of characters in a box",
+    "tags": [
+      "oe",
+      "textbox",
+      "character",
+      "validation"
+    ],
+    "questionType": "OE text",
+    "projectName": "Assignment #114 - 23-065437-01-02 eBC Nerlynx ATU 2024",
+    "projectId": "UK230654370102",
+    "addedBy": "Clinton",
+    "path": "patterns/open-ended-oe-text-box-question-with-minimum-character-validation"
   }
 ]
