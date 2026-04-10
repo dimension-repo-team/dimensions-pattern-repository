@@ -1,0 +1,8 @@
+Q10_0X "Please take a few moments to think about neratinib (NERLYNX) for the treatment of <b><u>early stage {#INS_HER}</u> breast cancer </b> and type anything that comes to mind. It may be:<p/><ul><li>Specific benefits or limitations vs. other products </li><li>Patient types for which this product is most or least suitable</li><li>Things you’ve learned through published data, word of mouth or direct experience</li><li>Anything that supports your prescribing decisions</li><li>Problems you would have if this product were not available</li><li>Anything that prevents you from using or recommending the product</li><li>Willingness to use in the future</li></ul>"
+    text;
+
+hCustomMsgs "Custom Error Messages - Place here to be translated."
+    categorical [1..1]
+    {
+        ERR41 "Please fill in an answer longer than 4 characters"
+    } nocasedata;

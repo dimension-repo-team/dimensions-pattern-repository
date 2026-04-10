@@ -1,0 +1,6 @@
+{
+  "id": "open-ended-oe-text-box-question-with-minimum-character-validation",
+  "title": "Open-Ended (OE) text box question with minimum character validation",
+  "description": "OE text question with validation to accept minimum number of characters in a box",
+  "hasPreview": true
+}
