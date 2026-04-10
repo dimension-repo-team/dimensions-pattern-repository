@@ -1,0 +1,6 @@
+{
+  "id": "open-ended-oe-text-box-question-with-minimum-word-validation",
+  "title": "Open-Ended (OE) text box question with minimum word validation",
+  "description": "OE text box question with validation to accept minimum number of words in a box",
+  "hasPreview": true
+}
