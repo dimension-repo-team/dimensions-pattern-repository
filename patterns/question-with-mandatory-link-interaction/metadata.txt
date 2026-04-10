@@ -1,0 +1,15 @@
+QI02 "We would like to take this opportunity to remind you again that taking part in this study is entirely voluntary. If you decide to participate, we ask you to read through the detailed consent information terms and condition document, which is available at: <span class='clicked'><a href='https://images3.ipsosinteractive.com/images/UK/HCGOO/FIMUM/UK250098660102/{#MRK_QCountry}/{#MRK_SITE}.pdf' target='_blank'>link</a></span><p/>After you read the detailed informed consent information document, please confirm that:"
+    categorical [1..1]
+    {
+        Yes "I have read, understood, and accepted the points described in the informed consent document and I freely give my consent to join this study as described to me in this document ",
+        No "No, I do not want to participate in this research based on the points described in the informed consent form"
+    } codes(
+    {
+        _NA "" NA
+    } );
+
+    I02_Exclusive ""
+    categorical [0..]
+    {
+        Clickevent "" exclusive
+    };

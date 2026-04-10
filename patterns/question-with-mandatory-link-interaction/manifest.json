@@ -1,0 +1,6 @@
+{
+  "id": "question-with-mandatory-link-interaction",
+  "title": "Question with Mandatory Link Interaction",
+  "description": "This question requires the user to click on a link embedded in the question text before selecting any options. The survey will only allow progression to the next screen after the link has been clicked. Selecting an option without clicking the link will not advance the survey.",
+  "hasPreview": true
+}
