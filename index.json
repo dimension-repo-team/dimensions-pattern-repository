@@ -293,17 +293,18 @@
     "path": "patterns/dynamic-scale-order"
   },
   {
-    "id": "question-with-mandatory-link-interaction",
-    "title": "Question with Mandatory Link Interaction",
-    "description": "This question requires the user to click on a link embedded in the question text before selecting any options. The survey will only allow progression to the next screen after the link has been clicked. Selecting an option without clicking the link will not advance the survey.",
+    "id": "numeric-grid-with-column-name",
+    "title": "Numeric grid with column name",
+    "description": "Grid with numeric box besides the statement for each specific column with its name",
     "tags": [
-      "link",
-      "click link"
+      "numeric grid",
+      "numeric",
+      "column name"
     ],
-    "questionType": "Categorical question with mandatory link",
+    "questionType": "Numeric grid",
     "projectName": "Assignment #173 - 25-009866-01-02 UV in the Gulf Region - Patients",
     "projectId": "UK250098660102",
     "addedBy": "Clinton",
-    "path": "patterns/question-with-mandatory-link-interaction"
+    "path": "patterns/numeric-grid-with-column-name"
   }
 ]
