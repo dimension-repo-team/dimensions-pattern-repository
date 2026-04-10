@@ -1,0 +1,28 @@
+GRID_Q09 "Earlier you told us that your confirmed diagnosis of chronic urticaria was given to you by a <b>{#QS05}</b>. Can you please tell us how many different doctors, if any, you saw for chronic urticaria symptoms <b><u><i>before</i></u></b> your chronic urticaria diagnosis was confirmed?
+
+	Type in how many different doctors within each specialty below you have seen <b><i>before</i></b> your diagnosis was confirmed.
+	
+	<i>You must enter a number for each type of doctor listed; please type in “0” if you have not seen any doctors in that specialty.</i>" loop
+    {
+        PrimaryC "Primary Care Physician (PCP) / General Practitioner (GP)" fix,
+        Dermatol "Dermatologist",
+        Allergis "Allergist / Allergist Immunologist",
+        Internal "Internal Medicine Specialist",
+        Immunolo "Immunologist",
+        Emergenc "Emergency room doctor",
+        Infectio "Infectious Disease Specialist",
+        Hepatolo "Hepatologist / Gastroenterologist",
+        Othertyp "Other type" fix
+    } ran fields -
+    (
+        Q09 "Number of doctors I saw <b><i>before</i></b> my chronic urticaria diagnosis"
+            style(
+                Width = "3em"
+            )
+        long [0 .. 50]
+        defaultanswer(0 );
+
+        qinfo ""
+        info;
+
+    ) expand grid;
