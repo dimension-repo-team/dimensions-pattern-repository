@@ -1,0 +1,25 @@
+ShowQuestionNo(IOM,"Q10_0")
+Q10_0X.Validation.Function = "Q10VAl"
+Q10_0X.Ask()
+
+
+Function Q10VAl(Q10_0X,IOM,Attempt)
+
+	If IOM.Questions["MRK_QCountry"]*{CHINA} then
+		if len(Q10_0X.Response) > 0 and len(Q10_0X.Response) < 4 then
+			Q10_0X.Errors.Clear()
+			Q10_0X.Errors.AddNew("ERR8",IOM.Questions["hCustomMsgs"].Categories.ERR41.Label)   
+			Q10VAl = false
+			exit function			
+		End if 		
+	Else
+	
+		if WordCount(Q10_0X,IOM) < 10 then
+	 		Q10_0X.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.ERR40.Label) 	
+	 		Q10VAl = false
+			exit function
+		End If 
+	End if 
+
+  	
+End Function
