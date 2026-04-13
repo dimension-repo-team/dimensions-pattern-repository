@@ -1,0 +1,6 @@
+{
+  "id": "date-validation-to-avoid-overlap-with-each-other",
+  "title": "Date validation to avoid overlap with each other",
+  "description": "Grid question with validation to ensure treatment dates don't overlap with each other and that the end date of the last treatment taken is before or same date as in previous question",
+  "hasPreview": true
+}

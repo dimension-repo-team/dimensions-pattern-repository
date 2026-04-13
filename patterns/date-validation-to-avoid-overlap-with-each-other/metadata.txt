@@ -1,0 +1,521 @@
+GRID_QSATTITUDE "{jsOther}Which of the following statements – if any – best fits with your attitude and experience towards each of the following prescription medications for the treatment of psoriasis?<br/>(Please select one answer per column)" loop
+    {
+        Corticos "Corticosteroids:<br/>-Topical Corticosteroid (TCS)<br/>-Injectable Corticosteroid (steroid injections)<br/>-Oral Corticosteroid (OCS)<br/>-Rectal Corticosteroid" fix,
+        Immunosu "Immunosuppressant treatments{#\.INS_QSATTITUDE_2}" fix,
+        Biologic "Biologic (an injectable medication targeting certain parts of the immune system)",
+        Bimzelxb "Bimzelx (bimekizumab)",
+        Cimziace "Cimzia {#\.INS_QSATTITUDE_4}",
+        Cosentyx "Cosentyx (secukinumab)",
+        Enbrelet "Enbrel (etanercept)",
+        Humiraad "Humira (adalimumab)",
+        Ilumetri "{#\.INS_QSATTITUDE_10}",
+        Kyntheum "{#\.INS_QSATTITUDE_11}",
+        Remicade "Remicade (infliximab)",
+        Simponig "Simponi (golimumab)",
+        Skyrizir "Skyrizi (risankizumab)",
+        Stelarau "Stelara (ustekinumab)",
+        Taltzixe "Taltz (ixekizumab)",
+        Tremfyag "Tremfya (guselkumab)",
+        Otezlaap "Otezla (apremilast)",
+        Biosimil "Biosimilar <i>(injectables that is almost the same as existing biological medicine)</i>" fix,
+        Otherple "Other: (please specify)<span id='oth1'></span>" other fix
+    } ran fields -
+    (
+        QSATTITUDE ""
+        categorical [0..1]
+        {
+            Ihavenev "I have never heard of this treatment / I am not aware of this treatment",
+            Ihavehea "I have heard of this treatment but am not interested in using / taking it",
+            Mydoctor "My doctor recommended this treatment, but I have declined it",
+            Ihaveuse "I have used / taken this treatment in the past, but I no longer use it",
+            Iaminter "I am interested in using / taking this treatment, and plan to ask my doctor about it",
+            Iamcurre "I am currently taking this treatment",
+            Iamcurre1 "I am currently taking this treatment and would recommend it to others"
+        };
+
+    ) expand grid;
+
+    QSATTITUDE_Oth1 "<!-- Stores other for QSATTITUDE-->"
+        style(
+            Width = "10em",
+            Control(
+                Type = "SingleLineEdit"
+            )
+        )
+    text;
+
+    MRK_QSATTITUDE "This is used for programming purpose"
+    categorical
+    {
+        Ihavenev "I have never heard of this treatment / I am not aware of this treatment",
+        Ihavehea "I have heard of this treatment but am not interested in using / taking it",
+        Mydoctor "My doctor recommended this treatment, but I have declined it",
+        Ihaveuse "I have used / taken this treatment in the past, but I no longer use it",
+        Iaminter "I am interested in using / taking this treatment, and plan to ask my doctor about it",
+        Iamcurre "I am currently taking this treatment",
+        Iamcurre1 "I am currently taking this treatment and would recommend it to others"
+    };
+
+    QSATT_COL1_CODES3_20 "holds products 3-20 from COLUMN 1 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL2_CODES3_20 "holds products 3-20 from COLUMN 2 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL3_CODES3_20 "holds products 3-20 from COLUMN 3 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL4_CODES3_20 "holds products 3-20 from COLUMN 4 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL6_CODES3_20 "holds products 3-20 from COLUMN 6 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL7_CODES3_20 "holds products 3-20 from COLUMN 7 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL8_CODES3_20 "holds products 3-20 from COLUMN 8 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL7_8_CODES3_20 "holds products 3-20 from COLUMN 7 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL4 "holds products from COLUMN 4 AT SATTITUDE"
+    categorical
+    {
+        use list_products -
+    };
+
+    QSATT_3_20 "holds product 3-20 from COLUMN 7 OR 8 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    QSATT_COL7_8 "holds product from COLUMN 7 OR 8 AT SATTITUDE"
+    categorical
+    {
+        use list_products -
+    };
+
+    QSATT_2_19 "holds products from COLUMN 4 SELECTED FOR CODES 2-19 AT SATTITUDE"
+    categorical
+    {
+        Immunosu "Immunosuppressant treatments{#\.INS_QSATTITUDE_2}",
+        Biologic "Biologic (an injectable medication targeting certain parts of the immune system)",
+        Bimzelxb "Bimzelx (bimekizumab)",
+        Cimziace "Cimzia {#\.INS_QSATTITUDE_4}",
+        Cosentyx "Cosentyx (secukinumab)",
+        Enbrelet "Enbrel (etanercept)",
+        Humiraad "Humira (adalimumab)",
+        Ilumetri "{#\.INS_QSATTITUDE_10}",
+        Kyntheum "{#\.INS_QSATTITUDE_11}",
+        Remicade "Remicade (infliximab)",
+        Simponig "Simponi (golimumab)",
+        Skyrizir "Skyrizi (risankizumab)",
+        Stelarau "Stelara (ustekinumab)",
+        Taltzixe "Taltz (ixekizumab)",
+        Tremfyag "Tremfya (guselkumab)",
+        Otezlaap "Otezla (apremilast)"
+    };
+
+    CODE_USER "CODE_USER"
+    categorical
+    {
+        Ihavenev "NOT AWARE",
+        Ihavehea "AWARE – NON-CONSIDERER",
+        Mydoctor "AWARE - REJECTOR",
+        Ihaveuse "USER IN THE PAST/ SWITCHER",
+        Iaminter "NON-USER CONSIDERER",
+        Iamcurre "USER",
+        Iamcurre1 "USER-ADVOCATE"
+    };
+
+    CODE_BIOLOGIC "CODE_BIOLOGIC"
+    categorical
+    {
+        BIOLOGIC "BIOLOGIC USER",
+        BIOLOGIC1 "BIOLOGIC USER IN THE PAST",
+        BIOLOGIC2 "BIOLOGIC NON-USERS CONSIDERER",
+        BIOLOGIC3 "BIOLOGIC AWARE CONSIDERER",
+        BIOLOGIC4 "BIOLOGIC AWARE REJECTORS",
+        BIOLOGIC5 "BIOLOGIC UNAWARE"
+    };
+
+    QUOTA_BIOLOGIC "BIOLOGIC QUOTA"
+    categorical
+    {
+        BIOLOGICN "BIOLOGIC NAÏVE",
+        BIOLOGICE "BIOLOGIC EXPERIENCED"
+    };
+
+    QSBIOLOGICDURATION_3_20 "holds products from COLUMN 7 OR 8 – ROW 3-20 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    CurrentMonth "this is for programming purpose"
+    long;
+
+    CurrentMonthx "this is for programming purpose"
+    categorical [1..1]
+    {
+        _01 "January",
+        _02 "February",
+        _03 "March",
+        _04 "April",
+        _05 "May",
+        _06 "June",
+        _07 "July",
+        _08 "August",
+        _09 "September",
+        _10 "October",
+        _11 "November",
+        _12 "December"
+    };
+
+    CurrentYear "this is for programming purpose"
+    long;
+
+    GRID_QSBIOLOGICDURATION "" loop
+    {
+        use list_products -
+    } fields -
+    (
+        BLK1 "You mentioned that you are currently taking <b>{@}</b>, approximately when did you start taking this treatment?<br/>(Please give the best estimate of the month and year you started this treatment)<p/>" block fields
+        (
+            QSBD_1 "Month"
+                style(
+                    Control(
+                        Type = "DropList"
+                    )
+                )
+            categorical [1..1]
+            {
+                Select "Select Month"
+                {
+                    _01 "January"
+                        [
+                            month = "01"
+                        ],
+                    _02 "February"
+                        [
+                            month = "02"
+                        ],
+                    _03 "March"
+                        [
+                            month = "03"
+                        ],
+                    _04 "April"
+                        [
+                            month = "04"
+                        ],
+                    _05 "May"
+                        [
+                            month = "05"
+                        ],
+                    _06 "June"
+                        [
+                            month = "06"
+                        ],
+                    _07 "July"
+                        [
+                            month = "07"
+                        ],
+                    _08 "August"
+                        [
+                            month = "08"
+                        ],
+                    _09 "September"
+                        [
+                            month = "09"
+                        ],
+                    _10 "October"
+                        [
+                            month = "10"
+                        ],
+                    _11 "November"
+                        [
+                            month = "11"
+                        ],
+                    _12 "December"
+                        [
+                            month = "12"
+                        ]
+                }
+            };
+
+            QSBD_2 "Year"
+                style(
+                    Width = "4em"
+                )
+            long [1900 .. 2025];
+
+        );
+
+    ) expand grid;
+
+    MRK_QSBIOLOGICDURATION "You mentioned that you are currently taking <b>{#QSBIOLOGICDURATION_3_20}</b>, approximately when did you start taking this treatment?<br/>(Please give the best estimate of the month and year you started this treatment)<p/>" block fields
+    (
+        QSBD_1 "Month"
+        categorical [1..1]
+        {
+            _01 "January"
+                [
+                    month = "01"
+                ],
+            _02 "February"
+                [
+                    month = "02"
+                ],
+            _03 "March"
+                [
+                    month = "03"
+                ],
+            _04 "April"
+                [
+                    month = "04"
+                ],
+            _05 "May"
+                [
+                    month = "05"
+                ],
+            _06 "June"
+                [
+                    month = "06"
+                ],
+            _07 "July"
+                [
+                    month = "07"
+                ],
+            _08 "August"
+                [
+                    month = "08"
+                ],
+            _09 "September"
+                [
+                    month = "09"
+                ],
+            _10 "October"
+                [
+                    month = "10"
+                ],
+            _11 "November"
+                [
+                    month = "11"
+                ],
+            _12 "December"
+                [
+                    month = "12"
+                ]
+        };
+
+        QSBD_2 "Year"
+            style(
+                Width = "4em"
+            )
+        long [1900 .. 2025];
+
+    );
+
+    MRK_QSBIOLOGICDURATIONx "holds date from QSBIOLOGICDURATION in YYYYMM"
+    long;
+
+    QSSequencePrevious_3_20 "holds products from COLUMN 4 – ROW 3-20 AT SATTITUDE"
+    categorical
+    {
+        use list_products_3_20 -
+    };
+
+    INS_QSSequencePrevious "Hold the text for QSSequencePrevious"
+    categorical [1..1]
+    {
+        USA " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        GERMANY " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        SPAIN " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        FRANCE " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        ITALY " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        UK " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        JAPAN " biologic",
+        CANADA " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>",
+        AUSTRALIA " <div class='tooltip'>biologic<span class='tooltiptext'><i>Biologic such as Humira (adalimumab), is an injectable medication targeting certain parts of the immune system</i></span></div>"
+    };
+
+    Loop_QSSequencePrevious "<script type='text/javascript'>$(function()&#123;$('.mrEdit').before(' Year');&#125;);</script>From the treatments that you have taken in the past, please write below when you started and stopped taking each of these treatments.<br/>Please select the <b>last{#INS_QSSequencePrevious} treatment that you stopped</b> <u>(the one you were taking before your current treatment)</u>, then select the start and stop date; then move to the biologic that you have taken before that one and include all biologics you have taken in the past." loop
+    {
+        Started "Started treatment",
+        Stopped "Stopped treatment"
+    } fields -
+    (
+        Grid_QSSP "" loop
+        {
+            list_products use \\.list_products -
+        } fields -
+        (
+            QSSP_1 "Month"
+                style(
+                    Control(
+                        Type = "DropList"
+                    )
+                )
+            categorical [1..1]
+            {
+                Select "Month"
+                {
+                    _01 "January"
+                        [
+                            month = "01"
+                        ],
+                    _02 "February"
+                        [
+                            month = "02"
+                        ],
+                    _03 "March"
+                        [
+                            month = "03"
+                        ],
+                    _04 "April"
+                        [
+                            month = "04"
+                        ],
+                    _05 "May"
+                        [
+                            month = "05"
+                        ],
+                    _06 "June"
+                        [
+                            month = "06"
+                        ],
+                    _07 "July"
+                        [
+                            month = "07"
+                        ],
+                    _08 "August"
+                        [
+                            month = "08"
+                        ],
+                    _09 "September"
+                        [
+                            month = "09"
+                        ],
+                    _10 "October"
+                        [
+                            month = "10"
+                        ],
+                    _11 "November"
+                        [
+                            month = "11"
+                        ],
+                    _12 "December"
+                        [
+                            month = "12"
+                        ]
+                }
+            };
+
+            QSSP_2 "Year"
+                style(
+                    Width = "4em"
+                )
+            long [1900 .. 2025];
+
+        ) expand grid;
+
+    ) expand grid;
+
+    MRK_QSSP_X "holds dates from brands in QSSequencePrevious in YYYYMM to check with date in QSBIOLOGICDURATION" loop
+    {
+        use list_products_3_20 -
+    } fields -
+    (
+        Started "Started"
+        long;
+
+        Stopped "Stopped"
+        long;
+
+    ) expand grid;
+
+    MRK_QSSequencePrevious "holds dates from brands in QSSequencePrevious in YYYYMM" loop
+    {
+        use list_products_3_20 -
+    } fields -
+    (
+        Started "Started"
+        long;
+
+        Stopped "Stopped"
+        long;
+
+    ) expand grid;
+
+hCustomMsgs "Custom Error Messages - Place here to be translated."
+    categorical [1..1]
+    {
+        MSG1 "",
+        MSG2 "",
+        MSG3 "",
+        SYS_ERR_EQ "Current total is <u>{UTOTAL}</u>. Please revise your answer(s) for total to be equal to <u>{TOTAL}</u>.",
+        SYS_ERR_RNK "Current ranking is invalid. Please rank only using values between <u>1</u> and <u>{INS}</u>. Each rank must be unique.",
+        ERR4 "Current total is <u>{UTOTAL}</u>. Please revise your answer(s) for total to be less than <u>{TOTAL}</u>.",
+        ERR5 "Current total is <u>{UTOTAL}</u>. Please revise your answer(s) for total to be greater than <u>{TOTAL}</u>.",
+        ERR6 "Current total is <u>{UTOTAL}</u>. Please revise your answer(s) for total to be less than or equal to <u>{TOTAL}</u>.",
+        ERR7 "Current total is <u>{UTOTAL}</u>. Please revise your answer(s) for total to be greater than or equal to <u>{TOTAL}</u>.",
+        ERR8 "Missing answer(s), please try again.",
+        ERR9 "Only one answer is allowed, please try again.",
+        ERR10 "Total must equal 100. Please correct.",
+        ERR11 "Please provide your answer(s) sequentially",
+        ERR12 "Total must be less than or equal to 100.",
+        ERR13 "Please provide your answer in 'Other text box'",
+        ERR14 "Please provide your response for 'Other'",
+        ERR15 "Please provide response for first Other (specify).",
+        ERR16 "Please provide response for second Other (specify).",
+        ERR17 "Please select one",
+        ERR18 "PLEASE SELECT ALL THAT APPLY.",
+        ERR19 "Your answer should have at least five words.",
+        ERR20 "Either select 'I don’t know' or provide answer in the text boxes",
+        ERR21 "Please click here to view Product X Description",
+        ERR22 "Answer in 'Other (Please Specify)' cannot be combined with remaining answers",
+        ERR23 "You can't give same answers to both",
+        ERR24 "Same response cannot be selected for ""Most important"" and ""Least important""",
+        ERR25 "Please provide your response at least in first text box.",
+        ERR26 "First Text Box can not be Empty",
+        ERR27 "Your answer should have at least three words.",
+        ERR28 "Please use the year row, if you have been diagnosed 12 months ago or more.",
+        ERR29 "You cannot check 'I’m not aware of any medications, therapies for the treatment of Psoriasis' with other answers.",
+        ERR30 "Please consider adding more detail to your answer, otherwise press the forward arrow to continue",
+        ERR31 "You cannot enter future date. Kindly enter date till {#CurrentMonthx} 2025.",
+        ERR32 "Kindly select only one product in either 'I am currently taking this treatment' or 'I am currently taking this treatment and would recommend it to others'",
+        ERR33 "'Stopped treatment' date cannot be prior to 'Started treatment' date for specific treatement",
+        ERR34 "Date in 'Started treatment' is same as/after {#MRK_QSBIOLOGICDURATION.QSBD_1} {#MRK_QSBIOLOGICDURATION.QSBD_2} mentioned in previous question. Date should be before {#MRK_QSBIOLOGICDURATION.QSBD_1} {#MRK_QSBIOLOGICDURATION.QSBD_2}",
+        ERR35 "Date in 'Stopped treatment' is same as/after {#MRK_QSBIOLOGICDURATION.QSBD_1} {#MRK_QSBIOLOGICDURATION.QSBD_2} mentioned in previous question. Date should be before {#MRK_QSBIOLOGICDURATION.QSBD_1} {#MRK_QSBIOLOGICDURATION.QSBD_2}",
+        ERR36 "Kindly ensure that date of treatments don't overlap with each other.",
+        ERR37 "Kindly ensure your estimate here shouldn't exceed your age {#QSAGE}.",
+        ERR38 "Kindly ensure insertion is >12 MONTHS/ >1 YEAR",
+        ERR39 "Kindly select only one product in either 'I am currently taking this treatment'"
+    } nocasedata;

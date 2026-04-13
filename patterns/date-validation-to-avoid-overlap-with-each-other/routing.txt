@@ -1,0 +1,267 @@
+ShowQuestionNo(IOM,"QSATTITUDE")
+QSATTITUDE_Oth1.MustAnswer = False
+GRID_QSATTITUDE[..].QSATTITUDE.MustAnswer = False
+GRID_QSATTITUDE.Label.Inserts["jsOther"].Text = "<script type=""text/javascript""> $(document).ready(function(){ $('#oth1').html($('input[name=_QPageQSATTITUDE_QQSATTITUDE__Oth1]').detach());})</script>"
+GRID_QSATTITUDE.Validation.Function = "Val_QSATTITUDE"
+pageQSATTITUDE.Ask()
+
+Function Val_QSATTITUDE(Question, IOM, Attempt)
+	
+	Dim Oth, GRID_QSATTITUDE, cat, QSATT_3_20, QSATT_COL7_8_CODES3_20, MRK_QCountry
+		
+	set GRID_QSATTITUDE = IOM.Questions["GRID_QSATTITUDE"]
+	set Oth = IOM.Questions["QSATTITUDE_Oth1"]
+	set QSATT_3_20 = IOM.Questions["QSATT_3_20"]
+	set QSATT_COL7_8_CODES3_20 = IOM.Questions["QSATT_COL7_8_CODES3_20"]
+	set MRK_QCountry = IOM.Questions["MRK_QCountry"]
+	
+	QSATT_COL7_8_CODES3_20 = null
+	
+	For each cat in GRID_QSATTITUDE.Categories
+		if cat <> {Otherple} then 
+			If IsEmpty(GRID_QSATTITUDE[cat].QSATTITUDE) then 
+				Grid_QSATTITUDE.Errors.Clear()
+		    	Grid_QSATTITUDE.Errors.AddNew("Err8",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label) 	 
+		    	Val_QSATTITUDE = false
+		    	exit function			
+			End if 
+		End if 
+	Next
+	
+	if (isempty(Oth) and (not IsEmpty(GRID_QSATTITUDE[{Otherple}].QSATTITUDE))) then
+		Grid_QSATTITUDE.Errors.Clear()
+    	Grid_QSATTITUDE.Errors.AddNew("Err13",IOM.Questions["hCustomMsgs"].Categories.ERR13.Label) 	 
+    	Val_QSATTITUDE = false
+    	exit function
+    end if
+    
+    if not isempty(Oth) and (IsEmpty(GRID_QSATTITUDE[{Otherple}].QSATTITUDE)) then
+    	Grid_QSATTITUDE.Errors.Clear()
+    	Grid_QSATTITUDE.Errors.AddNew("Err14",IOM.Questions["hCustomMsgs"].Categories.ERR14.Label)
+    	Val_QSATTITUDE = false
+    	exit function
+    end if	
+    
+    if containsany(MRK_QCountry,{JAPAN}) then
+	    for each cat in QSATT_COL7_8_CODES3_20.Categories
+			if containsany(GRID_QSATTITUDE[cat].QSATTITUDE,{Iamcurre}) then 
+				QSATT_COL7_8_CODES3_20 = QSATT_COL7_8_CODES3_20 + cat
+			end if
+		next
+	    
+	    if (answercount(QSATT_COL7_8_CODES3_20) > 1)then
+			Grid_QSATTITUDE.Errors.Clear()
+	    	Grid_QSATTITUDE.Errors.AddNew("ERR39",IOM.Questions["hCustomMsgs"].Categories.ERR39.Label)
+	    	Val_QSATTITUDE = false
+	    	exit function
+		End if 	
+	else
+		for each cat in QSATT_COL7_8_CODES3_20.Categories
+			if containsany(GRID_QSATTITUDE[cat].QSATTITUDE,{Iamcurre,Iamcurre1}) then 
+				QSATT_COL7_8_CODES3_20 = QSATT_COL7_8_CODES3_20 + cat
+			end if
+		next
+	    
+	    if (answercount(QSATT_COL7_8_CODES3_20) > 1)then
+			Grid_QSATTITUDE.Errors.Clear()
+	    	Grid_QSATTITUDE.Errors.AddNew("ERR32",IOM.Questions["hCustomMsgs"].Categories.ERR32.Label)
+	    	Val_QSATTITUDE = false
+	    	exit function
+		End if 
+	end if
+        
+End Function
+
+CurrentMonth = month(now())
+
+if CurrentMonth = 1 then CurrentMonthx = {_01}
+if CurrentMonth = 2 then CurrentMonthx = {_02}
+if CurrentMonth = 3 then CurrentMonthx = {_03}
+if CurrentMonth = 4 then CurrentMonthx = {_04}
+if CurrentMonth = 5 then CurrentMonthx = {_05}
+if CurrentMonth = 6 then CurrentMonthx = {_06}
+if CurrentMonth = 7 then CurrentMonthx = {_07}
+if CurrentMonth = 8 then CurrentMonthx = {_08}
+if CurrentMonth = 9 then CurrentMonthx = {_09}
+if CurrentMonth = 10 then CurrentMonthx = {_10}
+if CurrentMonth = 11 then CurrentMonthx = {_11}
+if CurrentMonth = 12 then CurrentMonthx = {_12}
+
+CurrentYear = year(now())
+
+ShowQuestionNo(IOM,"QSBIOLOGICDURATION")
+for each cat in GRID_QSATTITUDE.Categories
+	if containsany(GRID_QSATTITUDE[cat].QSATTITUDE,{Iamcurre,Iamcurre1}) then 
+		QSBIOLOGICDURATION_3_20 = QSBIOLOGICDURATION_3_20 + cat
+	end if
+next
+ShowTest(IOM,QSBIOLOGICDURATION_3_20,"")
+
+GRID_QSBIOLOGICDURATION.Categories.Filter = {} + QSBIOLOGICDURATION_3_20
+for each cat in GRID_QSBIOLOGICDURATION.Categories
+	GRID_QSBIOLOGICDURATION[cat].BLK1.Validation.Function = "Val_QSBIOLOGICDURATION"
+	GRID_QSBIOLOGICDURATION[cat].BLK1.Ask()
+next
+
+Function Val_QSBIOLOGICDURATION(BLK1, IOM, Attempt)
+	
+	Dim cat, CurrentMonth, GRID_QSBIOLOGICDURATION, MonthActual
+		
+	set GRID_QSBIOLOGICDURATION = IOM.Questions["GRID_QSBIOLOGICDURATION"]
+	set CurrentMonth = IOM.Questions["CurrentMonth"]
+	
+	For each cat in GRID_QSBIOLOGICDURATION.Categories
+		if GRID_QSBIOLOGICDURATION[cat].BLK1.QSBD_2 = 2025 then
+			MonthActual = GRID_QSBIOLOGICDURATION[cat].BLK1.QSBD_1.Categories[GRID_QSBIOLOGICDURATION[cat].BLK1.QSBD_1].Properties["month"]
+			'debug.MsgBox(MonthActual)
+			if MonthActual > CurrentMonth then
+		    	BLK1.QSBD_1.Errors.Clear()
+		    	BLK1.QSBD_1.Errors.AddNew("ERR31",IOM.Questions["hCustomMsgs"].Categories.ERR31.Label)
+		    	Val_QSBIOLOGICDURATION = false
+		    	exit function
+		    end if	
+		end if
+	Next
+        
+End Function
+
+if answercount(QSBIOLOGICDURATION_3_20) > 0 then
+	for each cat in GRID_QSBIOLOGICDURATION.Categories
+		MRK_QSBIOLOGICDURATION.QSBD_1 = GRID_QSBIOLOGICDURATION[cat].BLK1.QSBD_1
+		MRK_QSBIOLOGICDURATION.QSBD_2 = GRID_QSBIOLOGICDURATION[cat].BLK1.QSBD_2
+	next
+	ShowTest(IOM,MRK_QSBIOLOGICDURATION,"")
+	
+	MRK_QSBIOLOGICDURATIONx = clong(makestring(MRK_QSBIOLOGICDURATION.QSBD_2,"",MRK_QSBIOLOGICDURATION.QSBD_1.Categories[MRK_QSBIOLOGICDURATION.QSBD_1].Properties["month"]))
+	'ShowTest(IOM,MRK_QSBIOLOGICDURATIONx,"")
+end if
+
+ShowQuestionNo(IOM,"QSSequencePrevious")
+for each cat in GRID_QSATTITUDE.Categories
+	if containsany(GRID_QSATTITUDE[cat].QSATTITUDE,{Ihaveuse}) then 
+		QSSequencePrevious_3_20 = QSSequencePrevious_3_20 + cat
+	end if
+next
+ShowTest(IOM,QSSequencePrevious_3_20,"")
+
+if answercount(QSSequencePrevious_3_20) >= 2 then
+	INS_QSSequencePrevious = MRK_QCountry
+	
+	IOM.banners.Remove("JSFile2")
+	Loop_QSSequencePrevious.LayoutTemplate="SurveyTemplate_DA_ToolTip.htm"
+	
+	Loop_QSSequencePrevious[..].Grid_QSSP.Categories.Filter = {} + QSSequencePrevious_3_20
+	MRK_QSSequencePrevious.Categories = {} + QSSequencePrevious_3_20
+	
+	Loop_QSSequencePrevious.Validation.Function = "Val_QSSequencePrevious"
+	Loop_QSSequencePrevious.Ask()
+	IOM.Banners.AddNew("JSFile2","<script type=""text/javascript"" src=""https://images3.ipsosinteractive.com/images/UK/HCGOO/FIDP/jquery.js""></script>")
+	IOM.LayoutTemplate="SurveyTemplate_DA.htm"
+	
+	'MRK_QSSequencePrevious.Categories = {} + QSSequencePrevious_3_20
+	for each cat in MRK_QSSequencePrevious.Categories
+		MRK_QSSequencePrevious[cat].Started.Response = clong(makestring(Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_2,"",Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_1.Categories[Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_1].Properties["month"]))
+		MRK_QSSequencePrevious[cat].Stopped.Response = clong(makestring(Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_2,"",Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_1.Categories[Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_1].Properties["month"]))
+		''MRK_QSSequencePrevious[cat].Started.Response = clong(makestring(Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_2,"",Right(Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_1.Response.Name,2)))
+		''MRK_QSSequencePrevious[cat].Stopped.Response = clong(makestring(Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_2,"",Right(Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_1.Response.Name,2)))
+	next
+	'ShowTest(IOM,MRK_QSSequencePrevious,"")
+end if
+
+Function Val_QSSequencePrevious(Loop_QSSequencePrevious, IOM, Attempt)
+	
+	Dim cat, catx, cat1, cat2, CurrentMonth, MRK_QSBIOLOGICDURATIONx, MRK_QSSequencePrevious, MRK_QSSP_X
+		
+	set CurrentMonth = IOM.Questions["CurrentMonth"]
+	set MRK_QSBIOLOGICDURATIONx = IOM.Questions["MRK_QSBIOLOGICDURATIONx"]
+	set MRK_QSSequencePrevious = IOM.Questions["MRK_QSSequencePrevious"]
+	set MRK_QSSP_X = IOM.Questions["MRK_QSSP_X"]
+	
+	For each cat in Loop_QSSequencePrevious.Categories
+		For each catx in Loop_QSSequencePrevious[cat].Grid_QSSP.Categories
+			dim MonthActual
+			MonthActual = 0
+			
+			if Loop_QSSequencePrevious[cat].Grid_QSSP[catx].QSSP_2 = 2025 then
+				MonthActual = Loop_QSSequencePrevious[cat].Grid_QSSP[catx].QSSP_1.Categories[Loop_QSSequencePrevious[cat].Grid_QSSP[catx].QSSP_1].Properties["month"]		
+				'debug.MsgBox(MonthActual)				
+				if MonthActual > CurrentMonth then
+			    	Loop_QSSequencePrevious.Errors.Clear()
+			    	Loop_QSSequencePrevious.Errors.AddNew("ERR31",Makestring(catx.Label,": ",IOM.Questions["hCustomMsgs"].Categories.ERR31.Label))
+			    	Val_QSSequencePrevious = false
+			    	exit function
+			    end if	
+			end if
+			
+			dim MonthDiff_Start, MonthDiff_Stop, YearDiff_Start, YearDiff_Stop, ActualMonth_Start, ActualMonth_Stop
+			MonthDiff_Start = 0
+			MonthDiff_Stop = 0
+			YearDiff_Start = 0
+			YearDiff_Stop = 0
+			ActualMonth_Start = 0
+			ActualMonth_Stop = 0
+			
+			MonthDiff_Start = month(now()) - Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_1.Categories[Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_1].Properties["month"]
+			YearDiff_Start = year(now()) - Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_2
+		    ActualMonth_Start = (YearDiff_Start * 12) + MonthDiff_Start 
+			'debug.MsgBox(ActualMonth_Start)
+			
+			MonthDiff_Stop = month(now()) - Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_1.Categories[Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_1].Properties["month"]
+			YearDiff_Stop = year(now()) - Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_2
+			ActualMonth_Stop = (YearDiff_Stop * 12) + MonthDiff_Stop
+			'debug.MsgBox(ActualMonth_Stop)
+			
+			if ActualMonth_Stop > ActualMonth_Start then
+				Loop_QSSequencePrevious.Errors.Clear()
+		    	Loop_QSSequencePrevious.Errors.AddNew("ERR33",Makestring(catx.Label,": ",IOM.Questions["hCustomMsgs"].Categories.ERR33.Label))
+		    	Val_QSSequencePrevious = false
+		    	exit function
+			end if
+			
+			MRK_QSSP_X[catx].Started.Response = clong(makestring(Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_2,"",Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_1.Categories[Loop_QSSequencePrevious[{Started}].Grid_QSSP[catx].QSSP_1].Properties["month"]))
+			MRK_QSSP_X[catx].Stopped.Response = clong(makestring(Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_2,"",Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_1.Categories[Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[catx].QSSP_1].Properties["month"]))
+			
+	   		if (MRK_QSBIOLOGICDURATIONx <> null) then
+				if (MRK_QSSP_X[catx].Started >= MRK_QSBIOLOGICDURATIONx) then
+					Loop_QSSequencePrevious.Errors.Clear()
+			    	Loop_QSSequencePrevious.Errors.AddNew("ERR34",Makestring(catx.Label,": ",IOM.Questions["hCustomMsgs"].Categories.ERR34.Label))
+			    	Val_QSSequencePrevious = false
+			    	exit function
+				end if
+				
+				if (MRK_QSSP_X[catx].Stopped >= MRK_QSBIOLOGICDURATIONx) then
+					Loop_QSSequencePrevious.Errors.Clear()
+			    	Loop_QSSequencePrevious.Errors.AddNew("ERR35",Makestring(catx.Label,": ",IOM.Questions["hCustomMsgs"].Categories.ERR35.Label))
+			    	Val_QSSequencePrevious = false
+			    	exit function
+				end if
+			end if
+		Next
+   	Next
+   	
+   	'Punch the Answers before checking
+   	For each cat in MRK_QSSequencePrevious.Categories
+		MRK_QSSequencePrevious[cat].Started.Response = clong(makestring(Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_2,"",Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_1.Categories[Loop_QSSequencePrevious[{Started}].Grid_QSSP[cat].QSSP_1].Properties["month"]))
+		MRK_QSSequencePrevious[cat].Stopped.Response = clong(makestring(Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_2,"",Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_1.Categories[Loop_QSSequencePrevious[{Stopped}].Grid_QSSP[cat].QSSP_1].Properties["month"]))
+	Next
+   	
+   	Dim DateError
+   	DateError = False
+   	
+   	for each cat in MRK_QSSequencePrevious.Categories
+   		for each catx in MRK_QSSequencePrevious.Categories
+   			if cat <> catx then
+   				if (MRK_QSSequencePrevious[catx].Started >= MRK_QSSequencePrevious[cat].Started) AND (MRK_QSSequencePrevious[catx].Started =< MRK_QSSequencePrevious[cat].Stopped) then DateError = True
+   				if (MRK_QSSequencePrevious[catx].Stopped >= MRK_QSSequencePrevious[cat].Started) AND (MRK_QSSequencePrevious[catx].Stopped =< MRK_QSSequencePrevious[cat].Stopped) then DateError = True
+   				
+   				If  DateError = True Then
+   					Loop_QSSequencePrevious.Errors.Clear()
+			    	Loop_QSSequencePrevious.Errors.AddNew("ERR36",Makestring(cat.Label,": ",IOM.Questions["hCustomMsgs"].Categories.ERR36.Label))
+			    	Val_QSSequencePrevious = false
+			    	exit function
+				End if   				
+   			end if
+   		next
+   	next
+   	
+End Function
